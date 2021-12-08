@@ -40,6 +40,10 @@ namespace CostasLikos_individual_part_a.DataBase
         Student s18 = new Student("Kira", "Don", new DateTime(1998,7,20),150);
         Student s19 = new Student("Naruto", "Uzumaki", new DateTime(1956,6,18),2250);
         Student s20 = new Student("Dexter", "Morgan", new DateTime(1972,3,19),2500);
+
+        //Courses-----------------
+        Course c1 = new Course();
+
         
     }
 }
