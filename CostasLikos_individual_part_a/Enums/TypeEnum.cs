@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Enums
 {
-    enum TitleEnum
+    enum TypeEnum
     {
-        CSharp,JavaScript,Java,Python
+        FullTime,PartTime
     }
 }

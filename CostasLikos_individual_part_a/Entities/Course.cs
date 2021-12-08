@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CostasLikos_individual_part_a.Enums;
+using System;
 
 namespace Costas_Part_A
 {
@@ -6,7 +7,7 @@ namespace Costas_Part_A
     {
 
         //CTOR--------------------------
-        public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
+        public Course(TitleEnum title, StreamEnum stream, TypeEnum type, DateTime startDate, DateTime endDate)
         {
             this.title = title;
             this.stream = stream;
@@ -15,9 +16,9 @@ namespace Costas_Part_A
             this.endDate = endDate;
         }//CTOR------------------------------------
 
-        public string title { get; set; }
-        public string stream { get; set; }
-        public string type { get; set; }
+        public TitleEnum title { get; set; }
+        public StreamEnum stream { get; set; }
+        public TypeEnum type { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
     }

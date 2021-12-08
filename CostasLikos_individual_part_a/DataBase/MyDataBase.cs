@@ -1,4 +1,5 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace CostasLikos_individual_part_a.DataBase
         Student s20 = new Student("Dexter", "Morgan", new DateTime(1972,3,19),2500);
 
         //Courses-----------------
-        Course c1 = new Course();
+        Course c1 = new Course(TitleEnum.CSharp, StreamEnum.);
 
         
     }
