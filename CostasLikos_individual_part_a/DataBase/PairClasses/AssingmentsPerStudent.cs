@@ -11,8 +11,8 @@ namespace CostasLikos_individual_part_a.DataBase.PairClasses
     {
         public static void Pair(Assignment a, Student s)
         {
-            s.Assignment.Add(a);
-            a.assignmets.Add(s);
+            s.assignments.Add(a);
+            a.students.Add(s);
         }
     }
 }

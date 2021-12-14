@@ -1,4 +1,6 @@
-﻿namespace Costas_Part_A
+﻿using System.Collections.Generic;
+
+namespace Costas_Part_A
 {
 
     class Trainer
@@ -17,6 +19,11 @@
         public string lastName { get; set; }
 
         public string subject;
+
+        //NavProp
+        public List<Assignment> assignments { get; set; } = new List<Assignment>();
+        public List<Student> students { get; set; } = new List<Student>();
+        public List<Course> courses { get; set; } = new List<Course>();
 
 
     }

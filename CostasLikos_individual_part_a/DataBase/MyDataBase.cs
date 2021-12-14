@@ -1,4 +1,5 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.DataBase.PairClasses;
 using CostasLikos_individual_part_a.Enums;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,13 @@ namespace CostasLikos_individual_part_a.DataBase
     class MyDatabase
     {
 
-        public List<Student> students { get; set; } = new List<Student>();
+        public List<Student> students { get; set; } 
 
-        public List<Course> courses { get; set; } = new List<Course>();
+        public List<Course> courses { get; set; } 
 
-        public List<Assignment> assignments { get; set; } = new List<Assignment>();
+        public List<Assignment> assignments { get; set; }
 
-        public List<Trainer> trainers { get; set; } = new List<Trainer>();
+        public List<Trainer> trainers { get; set; }
 
 
         public MyDatabase()
@@ -48,9 +49,12 @@ namespace CostasLikos_individual_part_a.DataBase
             Student s20 = new Student("Dexter", "Morgan", new DateTime(1972, 3, 19), 2500);
             #endregion
             //Courses-----------------
-            Course c1 = new Course("Csharp", StreamEnum.CB15, TypeEnum.PartTime, new DateTime(2021, 1, 1), new DateTime(2021, 7, 1));
-            Course c2 = new Course("Java", StreamEnum.CB13, TypeEnum.FullTime, new DateTime(2020, 1, 1), new DateTime(2020, 7, 1));
-            Course c3 = new Course("Python", StreamEnum.CB11, TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
+            Course c1 = new Course("Csharp", "CB15", TypeEnum.PartTime, new DateTime(2021, 1, 1), new DateTime(2021, 7, 1));
+            Course c2 = new Course("Java", "CB14", TypeEnum.FullTime, new DateTime(2020, 1, 1), new DateTime(2020, 7, 1));
+            Course c3 = new Course("JavaScript", "CB12", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
+            Course c4 = new Course("Python", "CB11", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
+            Course c5 = new Course("Kobol", "CB08", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
+            Course c6 = new Course("C++", "CB14", TypeEnum.PartTime, new DateTime(2020, 1, 1), new DateTime(2019, 7, 1));
 
 
             //Assingment----------------------
@@ -63,8 +67,30 @@ namespace CostasLikos_individual_part_a.DataBase
             Trainer t2 = new Trainer("Nicky", "Something", "BackEnd");
             Trainer t3 = new Trainer("Elun", "Asshen", "DataBases");
 
+            //Polulate Data
+
+            students = new List<Student>() { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20 };
+            assignments = new List<Assignment>() { a1,a2,a3 };
+            trainers = new List<Trainer>() { t1, t2, t3 };
+
             //PAIRING===========================
-            //===================================
+            //==================================
+
+            AssingmentsPerCourse.Pair(a1, c1);
+            AssingmentsPerCourse.Pair(a1, c2);
+            AssingmentsPerCourse.Pair(a1, c3);
+
+            StudentsPerCourse.Pair(s1,c1);
+            StudentsPerCourse.Pair(s1,c2);
+            StudentsPerCourse.Pair(s1,c3);
+
+            TrainersPerCourse.Pair(t1,c1);
+            TrainersPerCourse.Pair(t1,c2);
+            TrainersPerCourse.Pair(t1,c3);
+
+
+
+
 
 
 

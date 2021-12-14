@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Costas_Part_A
 {
@@ -18,5 +19,10 @@ namespace Costas_Part_A
         public string lastName { get; set; }
         public DateTime dateOfBirth { get; set; }
         public double fees { get; set; }
+
+        //NavProp
+        public List<Course> courses { get; set; } = new List<Course>();
+        public List<Assignment> assignments { get; set; } = new List<Assignment>();
+        public List<Trainer> trainers { get; set; } = new List<Trainer>();
     }
 }
