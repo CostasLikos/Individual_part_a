@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Costas_Part_A
+namespace CostasLikos_individual_part_a.DataBase.PairClasses
 {
-    class Program
+    class TrainersPerCourse
     {
-        static void Main(string[] args)
-        {
-            App.Run();
-        }
+
     }
 }

@@ -7,7 +7,7 @@ namespace Costas_Part_A
     {
 
         //CTOR--------------------------
-        public Course(TitleEnum title, StreamEnum stream, TypeEnum type, DateTime startDate, DateTime endDate)
+        public Course(string title, StreamEnum stream, TypeEnum type, DateTime startDate, DateTime endDate)
         {
             this.title = title;
             this.stream = stream;
@@ -16,7 +16,7 @@ namespace Costas_Part_A
             this.endDate = endDate;
         }//CTOR------------------------------------
 
-        public TitleEnum title { get; set; }
+        public string title { get; set; }
         public StreamEnum stream { get; set; }
         public TypeEnum type { get; set; }
         public DateTime startDate { get; set; }
