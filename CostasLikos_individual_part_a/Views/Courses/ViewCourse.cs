@@ -32,27 +32,27 @@ namespace CostasLikos_individual_part_a.Views.Courses
             //stream
             string stream = Helper.InputText("Give Course's stream");
             //enum
-            TypeEnum choise = Helper.EnumOption("Choose the type 1 for Full-Time or 2 for Part-Time");
+            TypeEnum choise = Helper.InputEnumOption("Choose the type 1 for Full-Time or 2 for Part-Time");
             //StartDate
-            DateTime start = Helper.EnumOption("Choose the starting date of the course");
+            DateTime start = Helper.InputStartDate("Choose the starting date of the course");
             //EndDate
-            DateTime end = Helper.EnumOption("Choose the finishing date of the course");
+            DateTime end = Helper.InputEndDate(start,choise);
 
-            Course obj = new Course(0,title, stream, choise , );
+            Course obj = new Course(0,title, stream, choise , start, end);
 
             return obj;
             //PWS FTIAXNW TO ID????
 
         }
 
-        public static void PrintActorsPerMovies(List<Movie> movies)
+        public static void PrintStudentsPerCourse(List<Course> courses)
         {
-            foreach (var mov in movies)
+            foreach (var course in courses)
             {
-                Console.WriteLine(mov.Title);
-                foreach (var actor in mov.Actors)
+                Console.WriteLine(course.title);
+                foreach (var stu in course.students)
                 {
-                    Console.WriteLine($"{"",-15}{actor.FirstName,-15}{actor.LastName,-15}");
+                    Console.WriteLine($"{"",-15}{stu.firstName,-15}{stu.lastName,-15}");
                 }
             }
         }

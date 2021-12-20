@@ -28,7 +28,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
         }
         public static int Counterplus1(List<Course> courses) => courses.Count() + 1; //??
 
-        public static TypeEnum EnumOption(string placeholder)
+        public static TypeEnum InputEnumOption(string placeholder)
         {
             int result;
             Console.WriteLine(placeholder);
@@ -49,6 +49,53 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             {
                 return TypeEnum.PartTime;
             }
+        }
+
+        public static bool IsProperDate(string date)
+        {
+            DateTime result;
+            DateTime.TryParse(date, out result);
+            return result == default(DateTime) ? false : true;
+        }
+
+       
+
+        public static DateTime InputStartDate(string placeholder)
+        {
+            Console.WriteLine(placeholder);
+            string result = Console.ReadLine();
+            bool x;
+            do
+            {
+                x = IsProperDate(result);
+                if (!x)
+                {
+                    Console.WriteLine("Wrong Input, Try again with DateTime Formating ex. 0-0-0");
+                }
+            } while (!x);
+
+            DateTime date = Convert.ToDateTime(result);
+
+            return date;
+            //DEN BAZW VALIDATION GIA TO PARELTHON GT MPOREI NA THELW NA KANW ADD KATI POU EXEI PERASEI O KAIROS TOU
+
+        }
+
+        public static DateTime InputEndDate(DateTime start, TypeEnum choice)
+        {
+            DateTime result;
+
+            if (choice == TypeEnum.FullTime)
+            {
+                result  = start.AddMonths(3); 
+            }
+            else
+            {
+                result = start.AddMonths(6);
+            }
+            
+            return result;
+
         }
 
 
