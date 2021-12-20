@@ -82,7 +82,7 @@ namespace CostasLikos_individual_part_a.DataBase
             courses = new List<Course>() {c1,c2,c3,c4,c5,c6 };
             trainers = new List<Trainer>() { t1, t2, t3,t4,t5 };
 
-            #region Pairing courses
+            #region Pairing
             //PAIRING===========================
             //==================================
 
@@ -219,15 +219,22 @@ namespace CostasLikos_individual_part_a.DataBase
             TrainersPerCourse.Pair(t5,c6);
            
 
-            
-
-
-
 
             #endregion
 
+            #region Assingment Per Student
+            //Assingment Per Student
+            //s1
+            AssingmentsPerStudent.Pair(a1,s1);
+            AssingmentsPerStudent.Pair(a2,s1);
+            AssingmentsPerStudent.Pair(a3,s1);
+            AssingmentsPerStudent.Pair(a5,s1);
+            AssingmentsPerStudent.Pair(a7,s1);
+            AssingmentsPerStudent.Pair(a8,s1);
+            AssingmentsPerStudent.Pair(a9,s1);
 
 
+             #endregion
         }
     }
 }
