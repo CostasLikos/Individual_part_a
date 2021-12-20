@@ -6,8 +6,9 @@ namespace Costas_Part_A
     class Assignment
     {
         //CTOR--------------------------
-        public Assignment(string title, string description, DateTime subDateTime, int oralMark, int totalMark)
+        public Assignment(int Id , string title, string description, DateTime subDateTime, int oralMark, int totalMark)
         {
+            this.Id = Id;
             this.title = title;
             this.description = description;
             this.subDateTime = subDateTime;

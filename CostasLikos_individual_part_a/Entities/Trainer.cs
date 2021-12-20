@@ -7,8 +7,9 @@ namespace Costas_Part_A
     {
 
         //CTOR--------------------------------------
-        public Trainer(string firstName, string lastName, string subject)
+        public Trainer(int Id, string firstName, string lastName, string subject)
         {
+            this.Id = Id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.subject = subject;

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="DataBase\MyDataBase.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerCourse.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerStudent.cs" />
@@ -56,13 +57,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Trainer.cs" />
+    <Compile Include="RepositoryService\AssignmentRepository.cs" />
+    <Compile Include="RepositoryService\CourseRepository.cs" />
+    <Compile Include="RepositoryService\StudentRepository.cs" />
+    <Compile Include="RepositoryService\TrainerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="RepositoryService\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,8 +6,9 @@ namespace Costas_Part_A
     class Student
     {
         //CTOR-------------------------
-        public Student(string firstName, string lastName, DateTime dateOfBirth, double fees)
+        public Student(int Id, string firstName, string lastName, DateTime dateOfBirth, double fees)
         {
+            this.Id = Id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.dateOfBirth = dateOfBirth;

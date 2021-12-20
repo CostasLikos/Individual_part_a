@@ -8,8 +8,9 @@ namespace Costas_Part_A
     {
 
         //CTOR--------------------------
-        public Course(string title, string stream, TypeEnum type, DateTime startDate, DateTime endDate)
+        public Course(int Id, string title, string stream, TypeEnum type, DateTime startDate, DateTime endDate)
         {
+            this.Id = Id;
             this.title = title;
             this.stream = stream;
             this.type = type;
@@ -24,13 +25,13 @@ namespace Costas_Part_A
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
 
-        public DateTime SetDate()
-        {
-            if (type = TypeEnum.FullTime)
-            {
-                //an balei full +6
-            }
-        }
+      //public DateTime SetDate()
+      //{
+      //    if (type = TypeEnum.FullTime)
+      //    {
+      //        //an balei full +6
+      //    }
+      //}
 
         //NavProp
         public List<Assignment> assignments { get; set; } = new List<Assignment>();
