@@ -11,7 +11,7 @@ namespace CostasLikos_individual_part_a.Controllers
     {
         AssignmentRepository assignmentService = new AssignmentRepository();
         StudentRepository studentService = new StudentRepository();
-        CourseRepository coursesService = new CourseRepository();
+        CourseRepository courseService = new CourseRepository();
         TrainerRepository trainerService = new TrainerRepository();
 
 
@@ -21,10 +21,25 @@ namespace CostasLikos_individual_part_a.Controllers
 
             Console.WriteLine("Assign student to Movie");
             Console.WriteLine();
+            Console.WriteLine("All students");
             foreach (var stu in students)
             {
-                Console.WriteLine($"{}");
+                Console.WriteLine($"{stu.Id,-15}{stu.firstName,-15}");
             }
+            Console.WriteLine();
+
+            var movies = courseService.GetAll();
+            ViewMovie.PrintMovies(movies);
+
+            Console.WriteLine("Give Actors Id");
+            int actorId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine();
+
+            Console.WriteLine("Give Movies Id");
+            int movieId = Convert.ToInt32(Console.ReadLine());
+
+            courseService.AttachActorToMovie(actorId, movieId);
         }
     }
 }
