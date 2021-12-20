@@ -61,12 +61,16 @@
     <Compile Include="RepositoryService\CourseRepository.cs" />
     <Compile Include="RepositoryService\StudentRepository.cs" />
     <Compile Include="RepositoryService\TrainerRepository.cs" />
+    <Compile Include="Views\Courses\ViewCourse.cs" />
+    <Compile Include="Views\HELPER\Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
+    <Folder Include="Views\Assignments\" />
+    <Folder Include="Views\Students\" />
+    <Folder Include="Views\Trainers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

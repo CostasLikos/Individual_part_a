@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Enums
 {
-    enum TypeEnum
+    public enum TypeEnum
     {
         FullTime,PartTime
     }

@@ -28,11 +28,11 @@ namespace CostasLikos_individual_part_a.Controllers
             }
             Console.WriteLine();
 
-            var movies = courseService.GetAll();
-            ViewMovie.PrintMovies(movies);
+            var courses = courseService.GetAll();
+            ViewCourse.PrintCourses(courses);
 
-            Console.WriteLine("Give Actors Id");
-            int actorId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Give Student Id");
+            int studentId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
 

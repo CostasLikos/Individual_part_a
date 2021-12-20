@@ -25,13 +25,6 @@ namespace Costas_Part_A
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
 
-      //public DateTime SetDate()
-      //{
-      //    if (type = TypeEnum.FullTime)
-      //    {
-      //        //an balei full +6
-      //    }
-      //}
 
         //NavProp
         public List<Assignment> assignments { get; set; } = new List<Assignment>();

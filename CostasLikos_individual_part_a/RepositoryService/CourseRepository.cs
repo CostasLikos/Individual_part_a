@@ -43,7 +43,7 @@ namespace CostasLikos_individual_part_a.RepositoryService
             db.courses.Add(c);
         }
 
-        public void Edit(int id, Movie m)
+        public void Edit(int id, Course c)
         {
             //Edit
         }
