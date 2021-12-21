@@ -30,17 +30,17 @@ namespace CostasLikos_individual_part_a.Controllers
             Console.WriteLine();
 
             var courses = courseService.GetAll();
-            ViewCourse.PrintCourses(courses);
+            ViewCourse.PrintCourse(courses);
 
             Console.WriteLine("Give Student Id");
             int studentId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
 
-            Console.WriteLine("Give Movies Id");
-            int movieId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Give Course Id");
+            int courseId = Convert.ToInt32(Console.ReadLine());
 
-            courseService.AttachActorToMovie(actorId, movieId);
+            courseService.AttachStudentToCourse(studentId, courseId);
         }
     }
 }

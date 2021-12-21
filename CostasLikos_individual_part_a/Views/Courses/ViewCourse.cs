@@ -14,14 +14,17 @@ namespace CostasLikos_individual_part_a.Views.Courses
     {
         public static void PrintCourse(List<Course> courses)
         {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("All Courses");
             Console.WriteLine();
-
-            Console.WriteLine($"{"Id",-15}{"Title",-15}{"Price",-15}{"Rating",-15}");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"{"Id",-10}{"Title",-30}{"Price",-30}{"Rating",-30}");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (var course in courses)
             {
-                Console.WriteLine($"{course.Id,-15}{course.title,-15}{course.stream,-15}{course.type,-15}");
+                Console.WriteLine($"{course.Id,-10}{course.title,-30}{course.stream,-30}{course.type,-30}");
             }
+            Console.ResetColor();
         }
 
         public static Course CreateCourse()
@@ -52,7 +55,7 @@ namespace CostasLikos_individual_part_a.Views.Courses
                 Console.WriteLine(course.title);
                 foreach (var stu in course.students)
                 {
-                    Console.WriteLine($"{"",-15}{stu.firstName,-15}{stu.lastName,-15}");
+                    Console.WriteLine($"{"Student:",-15}{stu.firstName,-15}{stu.lastName,-15}");
                 }
             }
         }

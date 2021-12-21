@@ -58,15 +58,15 @@ namespace CostasLikos_individual_part_a.DataBase
 
 
             //Assingment----------------------
-            Assignment a1 = new Assignment(1,"Calculator", "Make a functional calculator", new DateTime(0, 0, 30), 20, 80);
-            Assignment a2 = new Assignment(2,"Card game", "Make a card game with 52 cards", new DateTime(0, 0, 15), 30, 70);
-            Assignment a3 = new Assignment(3,"Site", "Make your own site", new DateTime(0, 0, 10), 10, 90);
-            Assignment a4 = new Assignment(4,"View", "Front-end assingment", new DateTime(0, 0, 10), 10, 90);
-            Assignment a5 = new Assignment(5,"Refactoring", "Refactor one of your previous assingments", new DateTime(0, 0, 20), 10, 90);
-            Assignment a6 = new Assignment(6,"Tik Tak Toe", "Construct the well known game", new DateTime(0, 0, 20), 10, 90);
-            Assignment a7 = new Assignment(7,"DataBase", "Make a full functional Database", new DateTime(0, 0, 20), 10, 90);
-            Assignment a8 = new Assignment(8,"Indinidual Project", "Architecture - Contact your Trainer.", new DateTime(0, 2, 0), 10, 90);
-            Assignment a9 = new Assignment(9,"Final Project", "Show us your work!", new DateTime(0, 3, 0), 10, 90);
+            Assignment a1 = new Assignment(1,"Calculator", "Make a functional calculator", new DateTime(2022, 12, 30), 20, 80);
+            Assignment a2 = new Assignment(2,"Card game", "Make a card game with 52 cards", new DateTime(2022, 02, 15), 30, 70);
+            Assignment a3 = new Assignment(3,"Site", "Make your own site", new DateTime(2022, 02, 10), 10, 90);
+            Assignment a4 = new Assignment(4,"View", "Front-end assingment", new DateTime(2022, 02, 10), 10, 90);
+            Assignment a5 = new Assignment(5,"Refactoring", "Refactor one of your previous assingments", new DateTime(2022, 02, 15), 10, 90);
+            Assignment a6 = new Assignment(6,"Tik Tak Toe", "Construct the well known game", new DateTime(2022, 04, 20), 10, 90);
+            Assignment a7 = new Assignment(7,"DataBase", "Make a full functional Database", new DateTime(2022, 01, 20), 10, 90);
+            Assignment a8 = new Assignment(8,"Indinidual Project", "Architecture - Contact your Trainer.", new DateTime(2022, 03, 20), 10, 90);
+            Assignment a9 = new Assignment(9,"Final Project", "Show us your work!", new DateTime(2022, 04, 20), 10, 90);
 
             //Trainers-------------------------
             Trainer t1 = new Trainer(1,"Ellias", "Gweanarth", "FrondEnd");

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\App.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="DataBase\MyDataBase.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerCourse.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="RepositoryService\CourseRepository.cs" />
     <Compile Include="RepositoryService\StudentRepository.cs" />
     <Compile Include="RepositoryService\TrainerRepository.cs" />
+    <Compile Include="Views\Assignments\ViewAssignments.cs" />
     <Compile Include="Views\Courses\ViewCourse.cs" />
     <Compile Include="Views\HELPER\Helper.cs" />
   </ItemGroup>
@@ -68,7 +70,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Assignments\" />
     <Folder Include="Views\Students\" />
     <Folder Include="Views\Trainers\" />
   </ItemGroup>

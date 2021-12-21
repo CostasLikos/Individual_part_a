@@ -70,7 +70,8 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 x = IsProperDate(result);
                 if (!x)
                 {
-                    Console.WriteLine("Wrong Input, Try again with DateTime Formating ex. 0-0-0");
+                    Console.WriteLine("Wrong Input, Try again with DateTime Formating ex. YYYY-MM-DD");
+                    Console.ReadLine();
                 }
             } while (!x);
 
