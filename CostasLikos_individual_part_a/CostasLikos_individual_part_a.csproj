@@ -48,7 +48,6 @@
     <Compile Include="DataBase\MyDataBase.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerCourse.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerStudent.cs" />
-    <Compile Include="DataBase\PairClasses\StudentPerCoursePerAssignmets.cs" />
     <Compile Include="DataBase\PairClasses\StudentsPerCourse.cs" />
     <Compile Include="DataBase\PairClasses\TrainersPerCourse.cs" />
     <Compile Include="Entities\Assignment.cs" />

@@ -21,8 +21,7 @@ namespace CostasLikos_individual_part_a.Application
             const int fourth = -40;
             string input;
 
-            do
-            {
+            
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING YOUR OPTIONS ");
@@ -45,10 +44,11 @@ namespace CostasLikos_individual_part_a.Application
                 Console.WriteLine($"{"",first}{"19 - STUDENT BY TITLE",second}");
                 Console.WriteLine($"{"",first}{"20 - STUDENT BY TITLE",second}");
                 Console.ResetColor();
-
+            do
+            {
                 input = Console.ReadLine();
-                Console.Clear();
 
+           
                 switch (input)
                 {
                     case "1":Views.Courses.ViewCourse.PrintCourse(db.courses);break;
