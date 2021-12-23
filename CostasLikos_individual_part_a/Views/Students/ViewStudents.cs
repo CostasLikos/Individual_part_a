@@ -26,7 +26,7 @@ namespace CostasLikos_individual_part_a.Views.Students
             Console.ResetColor();
         }
 
-        public static void CreateCourse(List<Student> students)
+        public static void CreateStudent(List<Student> students)
         {
             int Id = (students[students.Count - 1].Id) + 1;
             

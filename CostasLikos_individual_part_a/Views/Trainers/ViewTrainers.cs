@@ -11,7 +11,7 @@ namespace CostasLikos_individual_part_a.Views.Trainers
 {
     class ViewTrainers
     {
-        public static void PrintAssignment(List<Trainer>trainers)
+        public static void PrintTrainers(List<Trainer>trainers)
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("     All trainers");
