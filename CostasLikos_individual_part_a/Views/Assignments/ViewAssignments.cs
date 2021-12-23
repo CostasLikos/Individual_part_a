@@ -17,11 +17,11 @@ namespace CostasLikos_individual_part_a.Views.Assignments
             Console.WriteLine("     All Assignments");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"    {"Id",-10}{"Title",-30}{"Description",-30}{"Subition Date",-30}{"Oral mark",-30}{"Total Mark",-30}");
+            Console.WriteLine($"    {"Id",-10}{"Title",-30}{"Description",-60}{"Subition Date",-30}{"Oral mark",-30}{"Total Mark",-30}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (var ass in assignments)
             {
-                Console.WriteLine($"{ass.Id,-10}{ass.title,-30}{ass.description,-30}{ass.subDateTime,-30}{ass.oralMark,-30}{ass.totalMark,-30}");
+                Console.WriteLine($"    {ass.Id,-10}{ass.title,-30}{ass.description,-60}{ass.subDateTime,-30}{ass.oralMark,-30}{ass.totalMark,-30}");
             }
             Console.ResetColor();
         }

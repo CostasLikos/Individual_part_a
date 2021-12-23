@@ -21,7 +21,7 @@ namespace CostasLikos_individual_part_a.Views.Trainers
             Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (var tr in trainers)
             {
-                Console.WriteLine($"{tr.Id,-10}{tr.firstName,-30}{tr.lastName,-30}{tr.subject,-30}");
+                Console.WriteLine($"    {tr.Id,-10}{tr.firstName,-30}{tr.lastName,-30}{tr.subject,-30}");
             }
             Console.ResetColor();
         }

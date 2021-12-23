@@ -18,11 +18,11 @@ namespace CostasLikos_individual_part_a.Views.Courses
             Console.WriteLine("All Courses");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{"Id",-10}{"Title",-30}{"Price",-30}{"Rating",-30}");
+            Console.WriteLine($"    {"Id",-10}{"Title",-30}{"Price",-30}{"Rating",-30}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (var course in courses)
             {
-                Console.WriteLine($"{course.Id,-10}{course.title,-30}{course.stream,-30}{course.type,-30}");
+                Console.WriteLine($"    {course.Id,-10}{course.title,-30}{course.stream,-30}{course.type,-30}");
             }
             Console.ResetColor();
         }

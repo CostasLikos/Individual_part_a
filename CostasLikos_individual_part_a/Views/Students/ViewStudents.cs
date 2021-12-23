@@ -17,11 +17,11 @@ namespace CostasLikos_individual_part_a.Views.Students
             Console.WriteLine("All Students");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{"Id",-10}{"Firstname",-30}{"Lastname",-30}{"Date of Birth",-30}{"Fees",-30}");
+            Console.WriteLine($"    {"Id",-10}{"Firstname",-30}{"Lastname",-30}{"Date of Birth",-30}{"Fees",-30}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (var stu in students)
             {
-                Console.WriteLine($"{stu.Id,-10}{stu.firstName,-30}{stu.lastName,-30}{stu.dateOfBirth,-30}{stu.fees,-30}");
+                Console.WriteLine($"    {stu.Id,-10}{stu.firstName,-30}{stu.lastName,-30}{stu.dateOfBirth,-30}{stu.fees,-30}");
             }
             Console.ResetColor();
         }
