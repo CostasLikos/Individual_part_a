@@ -10,6 +10,36 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 {
     class Helper
     {
+        public static void ViewAllOptionsMenu()
+        {
+            const int first = -40;
+            const int second = -40;
+            const int third = -40;
+            const int fourth = -40;
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING YOUR OPTIONS ");
+            Console.WriteLine();
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine($"{"------------ALL DATA------------",first}{"------------CREATE DATA------------",second}{"------ADDITIONAL OPTIONS------",third}{"------------MANAGE APP------------",fourth}");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine();
+            Console.WriteLine($"{"1 - COURSES",first}{"10 - CREATE A COURSE",second}{"14 - STUDENTS WITH MORE THAN ONE COURSE",third}{"PRESS 0 BUTTON TO EXIT THE APP",fourth}");
+            Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION",third}{"PRESS C BUTTON TO CLEAR THE CONSOLE",fourth}");
+            Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"",third}{"",fourth}");
+            Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"",third}{"",fourth}");
+            Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"",third}");
+            Console.WriteLine($"{"6 - STUDENTS PER COURSE",first}{"",second}");
+            Console.WriteLine($"{"7 - TRAINERS PER COURSE",first}{"",second}");
+            Console.WriteLine($"{"8 - ASSIGNMENTS PER STUDENT",first}{"",second}");
+            Console.WriteLine($"{"9 - STUDENT PER COURSE PER ASSIGNMENT",first}{"",second}");
+            Console.WriteLine($"{"",first}{"",second}");
+            Console.WriteLine($"{"",first}{"",second}");
+            Console.ResetColor();
+        }
 
         public static string InputText(string placeholder)
         {
@@ -99,7 +129,21 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         }
 
+        public static void PressAnyKeyToContinue()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("PRESS ENTER TO CONTINUE");
+            Console.Read();
+        }
 
+        public static void ResetView()
+        {
+            Console.Clear();
+
+            ViewAllOptionsMenu();
+            
+        }
 
 
     }

@@ -20,7 +20,7 @@ namespace CostasLikos_individual_part_a.Controllers
         {
             var students = studentService.GetAll();
 
-            Console.WriteLine("Assign student to Movie");
+            Console.WriteLine("Assign student to Course");
             Console.WriteLine();
             Console.WriteLine("All students");
             foreach (var stu in students)

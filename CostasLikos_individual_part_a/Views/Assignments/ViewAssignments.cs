@@ -26,9 +26,8 @@ namespace CostasLikos_individual_part_a.Views.Assignments
             Console.ResetColor();
         }
 
-        public static Assignment CreateAssignment()
+        public static void CreateAssignment(List<Assignment> assignments)
         {
-
             
             string title = Helper.InputText("Give Assignment's title");
             
@@ -42,9 +41,7 @@ namespace CostasLikos_individual_part_a.Views.Assignments
 
             Assignment obj = new Assignment(0, title, description, subDateTime, oralMark, totalMark);
 
-            return obj;
-            //PWS FTIAXNW TO ID????
-
+            assignments.Add(obj);
         }
 
         public static void PrintStudentPerCoursePerAssignmets(List<Assignment> assignments)
@@ -58,9 +55,7 @@ namespace CostasLikos_individual_part_a.Views.Assignments
                     foreach (var k in j.students)
                     {
                         Console.WriteLine($"{"Students:",-15}{k.Id,-15}{k.firstName,-15}{k.lastName,-15}{k.dateOfBirth,-15}{k.fees,-15}");
-
                     }
-
                 }
             }
         }

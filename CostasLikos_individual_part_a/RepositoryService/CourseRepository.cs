@@ -19,6 +19,22 @@ namespace CostasLikos_individual_part_a.RepositoryService
             course.students.Add(student);
 
         }
+        public void AttachAssignmentToCourse(int assignmentId, int courseId)
+        {
+            var assignment = db.assignments.Find(x => x.Id == assignmentId);
+            var course = db.courses.Find(x => x.Id == courseId);
+
+            course.assignments.Add(assignment);
+
+        }
+        public void AttachTrainerToCourse(int trainerId, int courseId)
+        {
+            var trainer = db.trainers.Find(x => x.Id == trainerId);
+            var course = db.courses.Find(x => x.Id == courseId);
+
+            course.trainers.Add(trainer);
+
+        }
 
         public List<Course> GetAll()  
         {
@@ -43,14 +59,6 @@ namespace CostasLikos_individual_part_a.RepositoryService
             db.courses.Add(c);
         }
 
-        public void Edit(int id, Course c)
-        {
-            //Edit
-        }
-
-        public void Delete(int id)
-        {
-            //Delete
-        }
+       
     }
 }

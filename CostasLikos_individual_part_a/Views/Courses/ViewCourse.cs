@@ -27,7 +27,7 @@ namespace CostasLikos_individual_part_a.Views.Courses
             Console.ResetColor();
         }
 
-        public static Course CreateCourse()
+        public static void CreateCourse(List<Course> courses)
         {
             
             //title
@@ -43,8 +43,7 @@ namespace CostasLikos_individual_part_a.Views.Courses
 
             Course obj = new Course(0,title, stream, choise , start, end);
 
-            return obj;
-            //PWS FTIAXNW TO ID????
+            courses.Add(obj);
 
         }
 
@@ -55,6 +54,7 @@ namespace CostasLikos_individual_part_a.Views.Courses
                 Console.WriteLine(course.title);
                 foreach (var stu in course.students)
                 {
+                    Console.WriteLine("");
                     Console.WriteLine($"{"Student:",-15}{stu.firstName,-15}{stu.lastName,-15}");
                 }
             }
