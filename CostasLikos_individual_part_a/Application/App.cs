@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Application
@@ -17,25 +18,71 @@ namespace CostasLikos_individual_part_a.Application
             MyDatabase db = new MyDatabase();
             string input;
 
-            Views.HELPER.Helper.ViewAllOptionsMenu();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING YOUR OPTIONS ");
+            Console.WriteLine();
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Thread.Sleep(700);
+            Console.WriteLine($"{"  PRESS 1 TO CREATE YOUR DATA"}");
+            Thread.Sleep(700);
+            Console.WriteLine($"{"  PRESS 2 TO PROCEED WITHOUR CREATING NEW DATA"}");
+            Thread.Sleep(700);
+            Console.WriteLine($"{"  PRESS 3 TO EXIT APPLICATION"}");
+            Console.ResetColor();
 
 
             do
             {
-               
                 input = Console.ReadLine();
                 switch (input)
                 {
-                    case "0": Console.WriteLine("skata"); break;
-                    case "1":Views.Courses.ViewCourse.PrintCourse(db.courses);break;
-                    case "2": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                    case "0": Views.HELPER.Helper.Exit(); break;
+                    case "1": ; break;
+                    case "2": Views.HELPER.Helper.ViewAllOptionsMenu(); ; break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
                         break;
-                        
+
                 }
-                
+
+                do
+                {
+
+                    input = Console.ReadLine();
+                    switch (input)
+                    {
+                        case "0": Views.HELPER.Helper.Exit(); break;
+                        case "1": Views.Courses.ViewCourse.PrintCourse(db.courses); break;
+                        case "2": Views.Students.ViewStudents.PrintStudent(db.students); break;
+                        case "3": Views.Assignments.ViewAssignments.PrintAssignment(db.assignments); break;
+                        case "4": Views.Trainers.ViewTrainers.P(db.assignments); break;
+                        case "5": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "6": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "7": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "8": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "9": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "10": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "11": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "12": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "13": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "14": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "15": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "16": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "99":Views.HELPER.Helper.ResetView(); break;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
+                            break;
+
+                    }
+
+
+                } while (input != "0");
+                Console.ResetColor(); 
+
 
             } while (input != "0");
             Console.ResetColor();

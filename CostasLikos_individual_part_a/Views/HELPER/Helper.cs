@@ -41,6 +41,12 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ResetColor();
         }
 
+        public static void Exit()
+        {
+            Console.WriteLine("THANK YOU FOR VISITING");
+            Environment.Exit(0);
+        }
+
         public static string InputText(string placeholder)
         {
             
