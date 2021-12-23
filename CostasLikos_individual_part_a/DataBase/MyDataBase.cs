@@ -53,7 +53,7 @@ namespace CostasLikos_individual_part_a.DataBase
             Course c2 = new Course(2,"Java", "CB14", TypeEnum.FullTime, new DateTime(2020, 1, 1), new DateTime(2020, 7, 1));
             Course c3 = new Course(3,"JavaScript", "CB12", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
             Course c4 = new Course(4,"Python", "CB11", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
-            Course c5 = new Course(5,"Kobol", "CB08", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
+            Course c5 = new Course(5,"Cobol", "CB08", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
             Course c6 = new Course(6,"C++", "CB14", TypeEnum.PartTime, new DateTime(2020, 1, 1), new DateTime(2019, 7, 1));
 
 
