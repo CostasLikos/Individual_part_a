@@ -52,12 +52,7 @@ namespace CostasLikos_individual_part_a.RepositoryService
             return course;
         }
 
-        public void Add(Course c)   
-        {
-            int lastId = db.courses[db.courses.Count - 1].Id;
-            c.Id = lastId + 1;
-            db.courses.Add(c);
-        }
+        
 
        
     }

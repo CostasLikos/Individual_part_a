@@ -28,8 +28,8 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
             Console.WriteLine($"{"1 - COURSES",first}{"10 - CREATE A COURSE",second}{"14 - STUDENTS WITH MORE THAN ONE COURSE",third}{"PRESS 0 BUTTON TO EXIT THE APP",fourth}");
-            Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION",third}{"PRESS C BUTTON TO CLEAR THE CONSOLE",fourth}");
-            Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"",third}{"",fourth}");
+            Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION",third}{"PRESS 99 BUTTON TO CLEAR THE CONSOLE",fourth}");
+            Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"16 - FILTER DATA",third}{"",fourth}");
             Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"",third}{"",fourth}");
             Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"",third}");
             Console.WriteLine($"{"6 - STUDENTS PER COURSE",first}{"",second}");
@@ -43,7 +43,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static string InputText(string placeholder)
         {
-            //try catch  & do while
+            
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
             return result;
@@ -51,9 +51,17 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static int InputNumber(string placeholder)
         {
-            //try catch  & do while
+            
             Console.WriteLine(placeholder);
             int result = Convert.ToInt32(Console.ReadLine());
+            return result;
+        }
+
+        public static double InputDouble(string placeholder)
+        {
+
+            Console.WriteLine(placeholder);
+            double result = Convert.ToDouble(Console.ReadLine());
             return result;
         }
         public static int Counterplus1(List<Course> courses) => courses.Count() + 1; //??

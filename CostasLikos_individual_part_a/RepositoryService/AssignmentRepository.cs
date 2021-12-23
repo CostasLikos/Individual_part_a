@@ -25,12 +25,7 @@ namespace CostasLikos_individual_part_a.RepositoryService
             return assignment;
         }
 
-        public void Add(Assignment a)
-        {
-            int lastId = db.assignments[db.assignments.Count - 1].Id;
-            a.Id = lastId + 1;
-            db.assignments.Add(a);
-        }
+       
         public List<Assignment> GetAll()  
         {
             return db.assignments;

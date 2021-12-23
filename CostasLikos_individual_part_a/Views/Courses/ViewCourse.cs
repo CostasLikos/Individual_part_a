@@ -29,7 +29,7 @@ namespace CostasLikos_individual_part_a.Views.Courses
 
         public static void CreateCourse(List<Course> courses)
         {
-            
+            int Id = (courses[courses.Count - 1].Id)+1;
             //title
             string title = Helper.InputText("Give Course's title");
             //stream
@@ -41,21 +41,54 @@ namespace CostasLikos_individual_part_a.Views.Courses
             //EndDate
             DateTime end = Helper.InputEndDate(start,choise);
 
-            Course obj = new Course(0,title, stream, choise , start, end);
-
+            Course obj = new Course(Id,title, stream, choise, start, end);
+            
+            
             courses.Add(obj);
 
         }
 
         public static void PrintStudentsPerCourse(List<Course> courses)
         {
+            Console.WriteLine("");
             foreach (var course in courses)
             {
+                Console.WriteLine("");
                 Console.WriteLine(course.title);
                 foreach (var stu in course.students)
                 {
                     Console.WriteLine("");
-                    Console.WriteLine($"{"Student:",-15}{stu.firstName,-15}{stu.lastName,-15}");
+                    Console.WriteLine($"{"Student:",-15}{stu.Id,-15}{stu.firstName,-15}{stu.lastName,-15}");
+                }
+            }
+        }
+
+        public static void PrintTrainersPerCourse(List<Course> courses)
+        {
+            Console.WriteLine("");
+            foreach (var course in courses)
+            {
+                Console.WriteLine("");
+                Console.WriteLine(course.title);
+                foreach (var tr in course.trainers)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"{"Trainers:",-15}{tr.Id,-15}{tr.firstName,-15}{tr.lastName,-15}");
+                }
+            }
+        }
+
+        public static void PrintAssignmentPerCourse(List<Course> courses)
+        {
+            Console.WriteLine("");
+            foreach (var course in courses)
+            {
+                Console.WriteLine("");
+                Console.WriteLine(course.title);
+                foreach (var ass in course.assignments)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"{"Assignment:",-15}{ass.Id,-15}{ass.title,-15}");
                 }
             }
         }

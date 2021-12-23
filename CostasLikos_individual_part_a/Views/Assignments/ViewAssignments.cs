@@ -28,7 +28,8 @@ namespace CostasLikos_individual_part_a.Views.Assignments
 
         public static void CreateAssignment(List<Assignment> assignments)
         {
-            
+            int Id = (assignments[assignments.Count - 1].Id) + 1;
+
             string title = Helper.InputText("Give Assignment's title");
             
             string description = Helper.InputText("Give Assignment's description");
@@ -39,7 +40,7 @@ namespace CostasLikos_individual_part_a.Views.Assignments
 
             int totalMark = Helper.InputNumber("Give the total mark of assignmet");
 
-            Assignment obj = new Assignment(0, title, description, subDateTime, oralMark, totalMark);
+            Assignment obj = new Assignment(Id, title, description, subDateTime, oralMark, totalMark);
 
             assignments.Add(obj);
         }

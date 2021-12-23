@@ -64,13 +64,12 @@
     <Compile Include="Views\Assignments\ViewAssignments.cs" />
     <Compile Include="Views\Courses\ViewCourse.cs" />
     <Compile Include="Views\HELPER\Helper.cs" />
+    <Compile Include="Views\Students\ViewStudents.cs" />
+    <Compile Include="Views\Trainers\ViewTrainers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Students\" />
-    <Folder Include="Views\Trainers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

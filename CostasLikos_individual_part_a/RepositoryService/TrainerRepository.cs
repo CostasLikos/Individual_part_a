@@ -11,7 +11,26 @@ namespace CostasLikos_individual_part_a.RepositoryService
     class TrainerRepository
     {
         MyDatabase db = new MyDatabase();
-        public List<Trainer> GetAll()  //2
+
+        public Trainer GetByID(int id)
+        {
+            var trainer = db.trainers.Find(x => x.Id == id);
+            return trainer;
+        }
+
+        public Trainer GetByName(string name)
+        {
+            var trainer = db.trainers.Find(x => x.firstName == name);
+            return trainer;
+        }
+        public Trainer GetByLastName(string name)
+        {
+            var trainer = db.trainers.Find(x => x.lastName == name);
+            return trainer;
+        }
+
+       
+        public List<Trainer> GetAll()  
         {
             return db.trainers;
         }
