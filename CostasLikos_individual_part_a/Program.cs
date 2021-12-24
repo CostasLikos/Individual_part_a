@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,14 @@ namespace Costas_Part_A
     {
         static void Main(string[] args)
         {
-            App.Run();
+            //App.Run();
+
+            DateTime example = new DateTime(2021,12,25);
+
+            CultureInfo enUS = new CultureInfo("en-US");
+            example.ToString("d", enUS);
+
+            if (example.ToString("ddd", enUS) == "Sat" || example.ToString("ddd", enUS) == "Sun")  Console.WriteLine("ΔΟΥΛΕΥΕΙ ΜΠΡΟ");
+
         }
-    }
-}
+    }  }
