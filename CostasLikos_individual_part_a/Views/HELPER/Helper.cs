@@ -168,10 +168,8 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY,MM,DD");
             Console.ResetColor();
-            
 
 
-            
 
             CultureInfo enUS = new CultureInfo("en-US");
             date.ToString("d", enUS);
@@ -224,7 +222,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             
             foreach (var stu in students)
             {
-                if (stu.assignments.subDateTime > weekstart && stu.assignment.subDateTime < date)
+                if (stu.assignments.FindAll()> weekstart && stu.assignment.subDateTime < date)
                 {
                     Console.WriteLine();
                     Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { stu.assignment.title} - { stu.assignment.subDateTime}");

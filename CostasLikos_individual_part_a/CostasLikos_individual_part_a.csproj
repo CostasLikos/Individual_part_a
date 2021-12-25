@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Application\App.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="DataBase\MyDataBase.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerCourse.cs" />
     <Compile Include="DataBase\PairClasses\AssingmentsPerStudent.cs" />
