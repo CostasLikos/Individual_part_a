@@ -15,13 +15,8 @@ namespace Costas_Part_A
         static void Main(string[] args)
         {
             //App.Run();
-
-            DateTime example = new DateTime(2021,12,25);
-
-            CultureInfo enUS = new CultureInfo("en-US");
-            example.ToString("d", enUS);
-
-            if (example.ToString("ddd", enUS) == "Sat" || example.ToString("ddd", enUS) == "Sun")  Console.WriteLine("ΔΟΥΛΕΥΕΙ ΜΠΡΟ");
-
+            DateTime day = new DateTime(2/5/21);
+            Helper.DateForStudentsWithAssignmentToGive(day,students);
         }
-    }  }
+    }
+}

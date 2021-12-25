@@ -1,13 +1,16 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.DataBase;
 using CostasLikos_individual_part_a.Enums;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Views.HELPER
 {
+    
     class Helper
     {
         public static void ViewAllOptionsMenu()
@@ -157,6 +160,76 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             ViewAllOptionsMenu();
             
+        }
+
+        public static void DateForStudentsWithAssignmentToGive(DateTime date,List<Student> students)
+        {
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY,MM,DD");
+            Console.ResetColor();
+            
+
+
+            
+
+            CultureInfo enUS = new CultureInfo("en-US");
+            date.ToString("d", enUS);
+            DateTime weekstart = new DateTime();
+
+            if (date.ToString("ddd", enUS) == "Sat")
+            {
+                date.AddDays(-1);
+                 weekstart = date;
+                weekstart.AddDays(-4);
+            }
+            else if (date.ToString("ddd", enUS) == "Sun")
+            {
+                date.AddDays(-2);
+                weekstart = date;
+                weekstart.AddDays(-4);
+            }
+            else
+            {
+                if (date.ToString("ddd", enUS) == "Mon")
+                {
+                    weekstart = date;
+                    date.AddDays(+4);
+                }
+                else if (date.ToString("ddd", enUS) == "Tue")
+                {
+                    weekstart = date;
+                    weekstart.AddDays(-1);
+                    date.AddDays(+3);
+
+                }
+                else if (date.ToString("ddd", enUS) == "Wed")
+                {
+                    weekstart = date;
+                    weekstart.AddDays(-2);
+                    date.AddDays(+2);
+                }
+                else if (date.ToString("ddd", enUS) == "The")
+                {
+                    weekstart = date;
+                    weekstart.AddDays(-3);
+                    date.AddDays(+1);
+                }
+                else if (date.ToString("ddd", enUS) == "Fri")
+                {
+                    weekstart = date;
+                    weekstart.AddDays(-4);
+                }
+            }
+            
+            foreach (var stu in students)
+            {
+                if (stu.assignments.subDateTime > weekstart && stu.assignment.subDateTime < date)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { stu.assignment.title} - { stu.assignment.subDateTime}");
+                }
+            }
         }
 
 

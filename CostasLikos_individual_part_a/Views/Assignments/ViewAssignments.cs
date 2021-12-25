@@ -3,12 +3,14 @@ using CostasLikos_individual_part_a.Enums;
 using CostasLikos_individual_part_a.Views.HELPER;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Views.Assignments
 {
+    
     class ViewAssignments
     {
         public static void PrintAssignment(List<Assignment> assignments)
