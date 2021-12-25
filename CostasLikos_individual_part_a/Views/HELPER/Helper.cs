@@ -1,11 +1,14 @@
 ﻿using Costas_Part_A;
 using CostasLikos_individual_part_a.DataBase;
 using CostasLikos_individual_part_a.Enums;
+using CostasLikos_individual_part_a.Views.Courses;
+using CostasLikos_individual_part_a.Views.Students;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Views.HELPER
@@ -13,6 +16,63 @@ namespace CostasLikos_individual_part_a.Views.HELPER
     
     class Helper
     {
+        public static void ViewCreateMenu()
+        {
+
+            MyDatabase db = new MyDatabase();
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine($"    CHOOSE HOW MANY ENTITIES YOU WANT TO CREATE ,PLEASE INSERT NUMBER. ");
+            Console.WriteLine();
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+             int input = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < input; i++)
+            {
+                string input2;
+
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING WHAT YOU WANT TO CREATE    ");
+                Console.WriteLine();
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                
+                Thread.Sleep(700);
+                Console.WriteLine($"{"  PRESS 1 TO CREATE YOUR COURSE  "}");
+                Thread.Sleep(700);
+                Console.WriteLine($"{"  PRESS 2 TO CREATE YOUR STUDENT  "}");
+                Thread.Sleep(700);
+                Console.WriteLine($"{"  PRESS 3 TO CREATE YOUR ASSIGNMENT  "}");
+                Thread.Sleep(700);
+                Console.WriteLine($"{"  PRESS 4 TO CREATE YOUR TRAINER  "}");
+                Thread.Sleep(700);
+                Console.WriteLine($"{"  PRESS 0 TO EXIT  "}");
+                Console.ResetColor();
+
+                do
+                {
+                    input2 = Console.ReadLine();
+                    switch (input2)
+                    {
+                        case "0": Helper.Exit(); break;
+                        case "1": ViewCourse.CreateCourse(db.courses); break;
+                        case "2": ViewStudents.CreateStudent(db.students); break;
+                        case "3": Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                        case "4": Trainers.ViewTrainers.CreateTrainer(db.trainers); break;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
+                            break;
+
+                    } 
+                } while (input2 != "0");
+
+            }
+
+
+        }
         public static void ViewAllOptionsMenu()
         {
             const int first = -40;
