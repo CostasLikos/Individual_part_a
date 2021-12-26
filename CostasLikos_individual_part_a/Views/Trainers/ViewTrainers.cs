@@ -1,4 +1,5 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.DataBase;
 using CostasLikos_individual_part_a.Enums;
 using CostasLikos_individual_part_a.Views.HELPER;
 using System;
@@ -42,7 +43,8 @@ namespace CostasLikos_individual_part_a.Views.Trainers
             Console.WriteLine("Trainer Created");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nSUBJECT: {subject}");
-            
+            MyDatabase db = new MyDatabase();
+
         }
 
     }

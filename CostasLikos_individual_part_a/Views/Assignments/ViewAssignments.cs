@@ -55,12 +55,18 @@ namespace CostasLikos_individual_part_a.Views.Assignments
         {
             foreach (var i in assignments)
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"{"Assignmets:",-15}{i.title,-15}");
                 foreach (var j in i.courses)
                 {
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.WriteLine($"{"Courses:",-15}{j.title,-15}{j.stream,-15}{j.type,-15}");
+                    Console.WriteLine();
                     foreach (var k in j.students)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine($"{"Students:",-15}{k.Id,-15}{k.firstName,-15}{k.lastName,-15}{k.dateOfBirth,-15}{k.fees,-15}");
                     }
                 }

@@ -15,7 +15,7 @@ namespace CostasLikos_individual_part_a.Views.Courses
         public static void PrintCourse(List<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("All Courses");
+            Console.WriteLine("     All Courses");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"    {"Id",-10}{"Title",-30}{"Price",-30}{"Rating",-30}");
@@ -56,14 +56,16 @@ namespace CostasLikos_individual_part_a.Views.Courses
             Console.WriteLine("");
             foreach (var course in courses)
             {
-                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine(course.title);
                 foreach (var stu in course.students)
                 {
-                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
                     Console.WriteLine($"{"Student:",-15}{stu.Id,-15}{stu.firstName,-15}{stu.lastName,-15}");
+
                 }
             }
+            Console.ResetColor();
         }
 
         public static void PrintTrainersPerCourse(List<Course> courses)
@@ -71,14 +73,15 @@ namespace CostasLikos_individual_part_a.Views.Courses
             Console.WriteLine("");
             foreach (var course in courses)
             {
-                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine(course.title);
                 foreach (var tr in course.trainers)
                 {
-                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
                     Console.WriteLine($"{"Trainers:",-15}{tr.Id,-15}{tr.firstName,-15}{tr.lastName,-15}");
                 }
             }
+            Console.ResetColor();
         }
 
         public static void PrintAssignmentPerCourse(List<Course> courses)
@@ -86,14 +89,16 @@ namespace CostasLikos_individual_part_a.Views.Courses
             Console.WriteLine("");
             foreach (var course in courses)
             {
-                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine(course.title);
                 foreach (var ass in course.assignments)
                 {
-                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
                     Console.WriteLine($"{"Assignment:",-15}{ass.Id,-15}{ass.title,-15}");
                 }
             }
+            Console.ResetColor();
+
         }
     }
 }

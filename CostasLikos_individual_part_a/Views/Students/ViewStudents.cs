@@ -14,7 +14,7 @@ namespace CostasLikos_individual_part_a.Views.Students
         public static void PrintStudent(List<Student> students)
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("All Students");
+            Console.WriteLine("     All Students");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"    {"Id",-10}{"Firstname",-30}{"Lastname",-30}{"Date of Birth",-30}{"Fees",-30}");
@@ -55,14 +55,16 @@ namespace CostasLikos_individual_part_a.Views.Students
             Console.WriteLine("");
             foreach (var stu in students)
             {
-                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine($"{stu.firstName} {stu.lastName}");
                 foreach (var ass in stu.assignments)
                 {
-                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
                     Console.WriteLine($"{"Assignment:",-15}{ass.Id,-15}{ass.title,-15}");
                 }
             }
+            Console.ResetColor();
+
         }
     }
 }

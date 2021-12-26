@@ -303,112 +303,112 @@ namespace CostasLikos_individual_part_a.DataBase
             AssingmentsPerStudent.Pair(a9, s8);
 
             //s9
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s9);
+            AssingmentsPerStudent.Pair(a2, s9);
+            AssingmentsPerStudent.Pair(a3, s9);
+            AssingmentsPerStudent.Pair(a5, s9);
+            AssingmentsPerStudent.Pair(a7, s9);
+            AssingmentsPerStudent.Pair(a8, s9);
+            AssingmentsPerStudent.Pair(a9, s9);
 
             //s10
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s10);
+            AssingmentsPerStudent.Pair(a2, s10);
+            AssingmentsPerStudent.Pair(a3, s10);
+            AssingmentsPerStudent.Pair(a5, s10);
+            AssingmentsPerStudent.Pair(a7, s10);
+            AssingmentsPerStudent.Pair(a8, s10);
+            AssingmentsPerStudent.Pair(a9, s10);
             //s11
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s11);
+            AssingmentsPerStudent.Pair(a2, s11);
+            AssingmentsPerStudent.Pair(a3, s11);
+            AssingmentsPerStudent.Pair(a5, s11);
+            AssingmentsPerStudent.Pair(a7, s11);
+            AssingmentsPerStudent.Pair(a8, s11);
+            AssingmentsPerStudent.Pair(a9, s11);
 
             //s12
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s12);
+            AssingmentsPerStudent.Pair(a2, s12);
+            AssingmentsPerStudent.Pair(a3, s12);
+            AssingmentsPerStudent.Pair(a5, s12);
+            AssingmentsPerStudent.Pair(a7, s12);
+            AssingmentsPerStudent.Pair(a8, s12);
+            AssingmentsPerStudent.Pair(a9, s12);
 
             //s13
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s13);
+            AssingmentsPerStudent.Pair(a2, s13);
+            AssingmentsPerStudent.Pair(a3, s13);
+            AssingmentsPerStudent.Pair(a5, s13);
+            AssingmentsPerStudent.Pair(a7, s13);
+            AssingmentsPerStudent.Pair(a8, s13);
+            AssingmentsPerStudent.Pair(a9, s13);
             //s14
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s14);
+            AssingmentsPerStudent.Pair(a2, s14);
+            AssingmentsPerStudent.Pair(a3, s14);
+            AssingmentsPerStudent.Pair(a5, s14);
+            AssingmentsPerStudent.Pair(a7, s14);
+            AssingmentsPerStudent.Pair(a8, s14);
+            AssingmentsPerStudent.Pair(a9, s14);
 
             //s15
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a6, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s15);
+            AssingmentsPerStudent.Pair(a2, s15);
+            AssingmentsPerStudent.Pair(a3, s15);
+            AssingmentsPerStudent.Pair(a5, s15);
+            AssingmentsPerStudent.Pair(a6, s15);
+            AssingmentsPerStudent.Pair(a7, s15);
+            AssingmentsPerStudent.Pair(a8, s15);
+            AssingmentsPerStudent.Pair(a9, s15);
 
             //s16
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s16);
+            AssingmentsPerStudent.Pair(a2, s16);
+            AssingmentsPerStudent.Pair(a3, s16);
+            AssingmentsPerStudent.Pair(a5, s16);
+            AssingmentsPerStudent.Pair(a7, s16);
+            AssingmentsPerStudent.Pair(a8, s16);
+            AssingmentsPerStudent.Pair(a9, s16);
 
             //s17
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a6, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s17);
+            AssingmentsPerStudent.Pair(a2, s17);
+            AssingmentsPerStudent.Pair(a3, s17);
+            AssingmentsPerStudent.Pair(a5, s17);
+            AssingmentsPerStudent.Pair(a6, s17);
+            AssingmentsPerStudent.Pair(a7, s17);
+            AssingmentsPerStudent.Pair(a8, s17);
+            AssingmentsPerStudent.Pair(a9, s17);
             //s18
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s18);
+            AssingmentsPerStudent.Pair(a2, s18);
+            AssingmentsPerStudent.Pair(a3, s18);
+            AssingmentsPerStudent.Pair(a5, s18);
+            AssingmentsPerStudent.Pair(a7, s18);
+            AssingmentsPerStudent.Pair(a8, s18);
+            AssingmentsPerStudent.Pair(a9, s18);
 
             //s19
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a6, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s19);
+            AssingmentsPerStudent.Pair(a2, s19);
+            AssingmentsPerStudent.Pair(a3, s19);
+            AssingmentsPerStudent.Pair(a5, s19);
+            AssingmentsPerStudent.Pair(a6, s19);
+            AssingmentsPerStudent.Pair(a7, s19);
+            AssingmentsPerStudent.Pair(a8, s19);
+            AssingmentsPerStudent.Pair(a9, s19);
 
             //s20
-            AssingmentsPerStudent.Pair(a1, s8);
-            AssingmentsPerStudent.Pair(a2, s8);
-            AssingmentsPerStudent.Pair(a3, s8);
-            AssingmentsPerStudent.Pair(a5, s8);
-            AssingmentsPerStudent.Pair(a7, s8);
-            AssingmentsPerStudent.Pair(a8, s8);
-            AssingmentsPerStudent.Pair(a9, s8);
+            AssingmentsPerStudent.Pair(a1, s20);
+            AssingmentsPerStudent.Pair(a2, s20);
+            AssingmentsPerStudent.Pair(a3, s20);
+            AssingmentsPerStudent.Pair(a5, s20);
+            AssingmentsPerStudent.Pair(a7, s20);
+            AssingmentsPerStudent.Pair(a8, s20);
+            AssingmentsPerStudent.Pair(a9, s20);
 
 
 

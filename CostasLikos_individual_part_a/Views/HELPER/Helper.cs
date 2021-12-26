@@ -78,17 +78,18 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 } while (input2 != "0");
 
             }
-           
+
             Console.ReadKey();
             Helper.ViewAllOptionsMenu();
 
         }
         public static void ViewAllOptionsMenu()
         {
-            const int first = -40;
-            const int second = -40;
-            const int third = -40;
-            const int fourth = -40;
+            const int first = -60;
+            const int second = -60;
+            const int third = -60;
+            const int fourth = -60;
+            string input;
 
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -111,6 +112,44 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine($"{"9 - STUDENT PER COURSE PER ASSIGNMENT",first}{"",second}");
             Console.WriteLine($"{"",first}{"",second}");
             Console.WriteLine($"{"",first}{"",second}");
+            Console.ResetColor();
+
+            do
+            {
+
+                input = Console.ReadLine();
+                MyDatabase db = new MyDatabase();
+                switch (input)
+                {
+                    case "0": Views.HELPER.Helper.Exit(); break;
+                    case "1": Views.Courses.ViewCourse.PrintCourse(db.courses); break;
+                    case "2": Views.Students.ViewStudents.PrintStudent(db.students); break;
+                    case "3": Views.Assignments.ViewAssignments.PrintAssignment(db.assignments); break;
+                    case "4": Views.Trainers.ViewTrainers.PrintTrainers(db.trainers); break;
+                    case "5": Views.Courses.ViewCourse.PrintAssignmentPerCourse(db.courses); break;
+                    case "6": Views.Courses.ViewCourse.PrintStudentsPerCourse(db.courses); break;
+                    case "7": Views.Courses.ViewCourse.PrintTrainersPerCourse(db.courses); break;
+                    case "8": Views.Students.ViewStudents.PrintAssignmentPerStudent(db.students); break;
+                    case "9": Views.Assignments.ViewAssignments.PrintStudentPerCoursePerAssignmets(db.assignments); break;
+                    case "10": Views.Courses.ViewCourse.CreateCourse(db.courses); break;
+                    case "11": Views.Students.ViewStudents.CreateStudent(db.students); break;
+                    case "12": Views.Assignments.ViewAssignments.CreateAssignment(db.assignments); break;
+                    case "13": Views.Trainers.ViewTrainers.CreateTrainer(db.trainers); break;
+                    case "14":; break;
+                    case "15": Views.HELPER.Helper.DateForStudentsWithAssignmentToGive("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD", db.students); break;
+                    case "16":; break;
+                    case "99": Views.HELPER.Helper.ResetView(); break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine();
+                        Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
+                        Console.ResetColor();
+                        break;
+
+                }
+
+
+            } while (input != "0");
             Console.ResetColor();
         }
 
@@ -184,7 +223,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
             bool x = IsProperDate(result); ;
-            
+
             do
             {
                 Console.WriteLine("WRONG INPUT PLESE TRY ARAIN WITH VALID DATE FORMATING ex : YYYY-MM-DD");
@@ -232,12 +271,14 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         }
 
-        public static void DateForStudentsWithAssignmentToGive(DateTime date, List<Student> students)
+        public static void DateForStudentsWithAssignmentToGive(string placeholder, List<Student> students)
         {
-
+            
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD");
+            Console.WriteLine(placeholder);
             Console.ResetColor();
+            DateTime date = Convert.ToDateTime(Console.ReadLine());
+           
 
 
 
@@ -290,14 +331,18 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 }
             }
 
-            // foreach (var stu in students)
-            // {
-            //     if (stu.assignments.Find(x => [x == subDateTime]);> weekstart && stu.assignment.subDateTime < date)
-            //     {
-            //         Console.WriteLine();
-            //         Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { stu.assignment.title} - { stu.assignment.subDateTime}");
-            //     }
-            // }
+            foreach (var stu in students)
+            {
+                foreach (Assignment ass in stu.assignments)
+                {
+                    if (ass.subDateTime > weekstart && ass.subDateTime < date)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { ass.title} - { ass.subDateTime}");
+                    }
+                }
+
+            }
         }
 
 
