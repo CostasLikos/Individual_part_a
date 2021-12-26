@@ -14,9 +14,9 @@ namespace Costas_Part_A
     {
         static void Main(string[] args)
         {
-            //App.Run();
-            DateTime day = new DateTime(2/5/21);
-            Helper.DateForStudentsWithAssignmentToGive(day,students);
+          App.Run();
+           //DateTime day = new DateTime(2/5/21);
+           //Helper.DateForStudentsWithAssignmentToGive(day,students);
         }
     }
 }

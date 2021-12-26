@@ -39,6 +39,10 @@ namespace CostasLikos_individual_part_a.Views.Trainers
             Trainer obj = new Trainer(Id, firstname, lastname, subject);
 
             trainers.Add(obj);
+            Console.WriteLine("Trainer Created");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nSUBJECT: {subject}");
+            
         }
 
     }

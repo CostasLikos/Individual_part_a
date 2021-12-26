@@ -45,6 +45,10 @@ namespace CostasLikos_individual_part_a.Views.Assignments
             Assignment obj = new Assignment(Id, title, description, subDateTime, oralMark, totalMark);
 
             assignments.Add(obj);
+            Console.WriteLine("Assignment Created");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"   \nID: {Id}   \nTITLE: {title}   \nDESCIPTION: {description}   \nSAUBMITION DATE: {subDateTime}   \nORAL MARK: {oralMark}   \nTOTAL MARK: {totalMark}");
+           
         }
 
         public static void PrintStudentPerCoursePerAssignmets(List<Assignment> assignments)

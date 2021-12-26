@@ -45,7 +45,10 @@ namespace CostasLikos_individual_part_a.Views.Courses
             
             
             courses.Add(obj);
-
+            Console.WriteLine("Course Created");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"   \nID: {Id}   \nTITLE: {title}   \nSTREAM: {stream}   \nTYPE: {choise}   \nSTART DATE: {start}   \nEND DATE: {end}");
+            
         }
 
         public static void PrintStudentsPerCourse(List<Course> courses)

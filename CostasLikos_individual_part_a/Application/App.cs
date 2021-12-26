@@ -39,10 +39,11 @@ namespace CostasLikos_individual_part_a.Application
                 switch (input)
                 {
                     case "0": Views.HELPER.Helper.Exit(); break;
-                    case "1": ; break;
+                    case "1": Views.HELPER.Helper.ViewCreateMenu(); break;
                     case "2": Views.HELPER.Helper.ViewAllOptionsMenu(); ; break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine();
                         Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
                         break;
 
@@ -73,8 +74,10 @@ namespace CostasLikos_individual_part_a.Application
                         case "16": ; break;
                         case "99":Views.HELPER.Helper.ResetView(); break;
                         default:
-                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine();
                             Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
+                            Console.ResetColor();
                             break;
 
                     }

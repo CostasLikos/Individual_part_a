@@ -42,7 +42,10 @@ namespace CostasLikos_individual_part_a.Views.Students
 
 
             students.Add(obj);
-
+            Console.WriteLine("Student Created");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nDATE OF BIRTH: {bdate}   \nFEES: {fees}");
+            
         }
 
        

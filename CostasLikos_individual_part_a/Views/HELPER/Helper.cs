@@ -13,41 +13,49 @@ using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Views.HELPER
 {
-    
+
     class Helper
     {
         public static void ViewCreateMenu()
         {
 
             MyDatabase db = new MyDatabase();
+            int input;
+            do
+            {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"    CHOOSE HOW MANY ENTITIES YOU WANT TO CREATE ,PLEASE INSERT NUMBER FROM 1-10. ");
+                Console.WriteLine();
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
 
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine($"    CHOOSE HOW MANY ENTITIES YOU WANT TO CREATE ,PLEASE INSERT NUMBER. ");
-            Console.WriteLine();
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-             int input = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < input; i++)
+
+                var kati = Console.ReadLine();
+                bool isNumerical = int.TryParse(kati, out input);
+
+            } while (input != 1 && input != 2 && input != 3 && input != 4 && input != 5 && input != 6 && input != 7 && input != 8 && input != 9 && input != 10);
+            Console.WriteLine($"  YOU ARE CREATING :{input} ENTITIES.");
+            for (int i = 1; i <= input; i++)
             {
                 string input2;
-
+                Console.WriteLine($"  YOU ARE CREATING ENTITY NUMBER : {i}");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING WHAT YOU WANT TO CREATE    ");
                 Console.WriteLine();
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                
-                Thread.Sleep(700);
+
+                Thread.Sleep(300);
                 Console.WriteLine($"{"  PRESS 1 TO CREATE YOUR COURSE  "}");
-                Thread.Sleep(700);
+                Thread.Sleep(100);
                 Console.WriteLine($"{"  PRESS 2 TO CREATE YOUR STUDENT  "}");
-                Thread.Sleep(700);
+                Thread.Sleep(100);
                 Console.WriteLine($"{"  PRESS 3 TO CREATE YOUR ASSIGNMENT  "}");
-                Thread.Sleep(700);
+                Thread.Sleep(100);
                 Console.WriteLine($"{"  PRESS 4 TO CREATE YOUR TRAINER  "}");
-                Thread.Sleep(700);
+                Thread.Sleep(100);
                 Console.WriteLine($"{"  PRESS 0 TO EXIT  "}");
                 Console.ResetColor();
 
@@ -66,11 +74,13 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                             Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
                             break;
 
-                    } 
+                    }
                 } while (input2 != "0");
 
             }
-
+           
+            Console.ReadKey();
+            Helper.ViewAllOptionsMenu();
 
         }
         public static void ViewAllOptionsMenu()
@@ -91,7 +101,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
             Console.WriteLine($"{"1 - COURSES",first}{"10 - CREATE A COURSE",second}{"14 - STUDENTS WITH MORE THAN ONE COURSE",third}{"PRESS 0 BUTTON TO EXIT THE APP",fourth}");
-            Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION",third}{"PRESS 99 BUTTON TO CLEAR THE CONSOLE",fourth}");
+            Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION DATE",third}{"PRESS 99 BUTTON TO CLEAR THE CONSOLE",fourth}");
             Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"16 - FILTER DATA",third}{"",fourth}");
             Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"",third}{"",fourth}");
             Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"",third}");
@@ -112,7 +122,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static string InputText(string placeholder)
         {
-            
+
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
             return result;
@@ -120,7 +130,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static int InputNumber(string placeholder)
         {
-            
+
             Console.WriteLine(placeholder);
             int result = Convert.ToInt32(Console.ReadLine());
             return result;
@@ -142,7 +152,9 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             do
             {
-                result = Convert.ToInt32(Console.ReadLine());
+
+                var kati = Console.ReadLine();
+                bool isNumerical = int.TryParse(kati, out result);
 
 
 
@@ -152,7 +164,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             {
                 return TypeEnum.FullTime;
             }
-            else 
+            else
             {
                 return TypeEnum.PartTime;
             }
@@ -165,21 +177,19 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             return result == default(DateTime) ? false : true;
         }
 
-       
+
 
         public static DateTime InputStartDate(string placeholder)
         {
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
-            bool x;
+            bool x = IsProperDate(result); ;
+            
             do
             {
+                Console.WriteLine("WRONG INPUT PLESE TRY ARAIN WITH VALID DATE FORMATING ex : YYYY-MM-DD");
+                result = Console.ReadLine();
                 x = IsProperDate(result);
-                if (!x)
-                {
-                    Console.WriteLine("Wrong Input, Try again with DateTime Formating ex. YYYY-MM-DD");
-                    Console.ReadLine();
-                }
             } while (!x);
 
             DateTime date = Convert.ToDateTime(result);
@@ -195,13 +205,13 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             if (choice == TypeEnum.FullTime)
             {
-                result  = start.AddMonths(3); 
+                result = start.AddMonths(3);
             }
             else
             {
                 result = start.AddMonths(6);
             }
-            
+
             return result;
 
         }
@@ -219,14 +229,14 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.Clear();
 
             ViewAllOptionsMenu();
-            
+
         }
 
-        public static void DateForStudentsWithAssignmentToGive(DateTime date,List<Student> students)
+        public static void DateForStudentsWithAssignmentToGive(DateTime date, List<Student> students)
         {
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY,MM,DD");
+            Console.WriteLine("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD");
             Console.ResetColor();
 
 
@@ -238,7 +248,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             if (date.ToString("ddd", enUS) == "Sat")
             {
                 date.AddDays(-1);
-                 weekstart = date;
+                weekstart = date;
                 weekstart.AddDays(-4);
             }
             else if (date.ToString("ddd", enUS) == "Sun")
@@ -279,15 +289,15 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     weekstart.AddDays(-4);
                 }
             }
-            
-            foreach (var stu in students)
-            {
-                if (stu.assignments.FindAll()> weekstart && stu.assignment.subDateTime < date)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { stu.assignment.title} - { stu.assignment.subDateTime}");
-                }
-            }
+
+            // foreach (var stu in students)
+            // {
+            //     if (stu.assignments.Find(x => [x == subDateTime]);> weekstart && stu.assignment.subDateTime < date)
+            //     {
+            //         Console.WriteLine();
+            //         Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { stu.assignment.title} - { stu.assignment.subDateTime}");
+            //     }
+            // }
         }
 
 
