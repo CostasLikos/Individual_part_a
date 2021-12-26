@@ -12,10 +12,11 @@ namespace CostasLikos_individual_part_a.Application
 {
     class App
     {
-        
+        public static MyDatabase db { get; set; } = new MyDatabase();
+
         public static void Run()
         {
-            
+           
             string input;
 
             Console.WriteLine();
@@ -39,8 +40,10 @@ namespace CostasLikos_individual_part_a.Application
                 switch (input)
                 {
                     case "0": Views.HELPER.Helper.Exit(); break;
-                    case "1": Views.HELPER.Helper.ViewCreateMenu(); break;
-                    case "2": Views.HELPER.Helper.ViewAllOptionsMenu(); ; break;
+                    case "1": 
+                        Views.HELPER.Helper.ViewCreateMenu(db.students,db.trainers,db.courses,db.assignments);
+                        Views.HELPER.Helper.ViewAllOptionsMenu(db.students, db.trainers, db.courses, db.assignments); break;
+                    case "2": Views.HELPER.Helper.ViewAllOptionsMenu(db.students, db.trainers, db.courses, db.assignments); ; break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
