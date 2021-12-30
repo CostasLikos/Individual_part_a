@@ -89,10 +89,10 @@ namespace CostasLikos_individual_part_a.Views.HELPER
         }
         public static void ViewAllOptionsMenu(List<Student> students, List<Trainer> trainers, List<Course> courses, List<Assignment> assignments)
         {
-            const int first = -60;
-            const int second = -60;
-            const int third = -60;
-            const int fourth = -60;
+            const int first = -50;
+            const int second = -50;
+            const int third = -50;
+            const int fourth = -50;
             string input;
 
             Console.WriteLine();
