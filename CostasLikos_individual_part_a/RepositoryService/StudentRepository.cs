@@ -1,4 +1,5 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.Application;
 using CostasLikos_individual_part_a.DataBase;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ namespace CostasLikos_individual_part_a.RepositoryService
 {
     public class StudentRepository
     {
-        MyDatabase db = new MyDatabase();
+        
 
         public void AttachAssignmentToStudent(int assignmentId, int studentId)
         {
-            var assignment = db.assignments.Find(x => x.Id == assignmentId);
-            var student = db.students.Find(x => x.Id == studentId);
+            var assignment = App.db.assignments.Find(x => x.Id == assignmentId);
+            var student = App.db.students.Find(x => x.Id == studentId);
 
             student.assignments.Add(assignment);
 
@@ -23,27 +24,39 @@ namespace CostasLikos_individual_part_a.RepositoryService
 
         public Student GetByID(int id)
         {
-            var student = db.students.Find(x => x.Id == id);
+            var student = App.db.students.Find(x => x.Id == id);
+            if (student is null)
+            {
+                throw new ArgumentNullException(nameof(student));
+            }
             return student;
         }
 
         public Student GetByName(string name)
         {
-            var students = db.students.Find(x => x.firstName == name);
-            
-            return students;
+            var student = App.db.students.Find(x => x.firstName == name);
+            if (student is null)
+            {
+                throw new ArgumentNullException(nameof(student));
+            }
+            return student;
         }
         public Student GetByLastName(string name)
         {
-            var students = db.students.Find(x => x.lastName == name);
+            var student = App.db.students.Find(x => x.lastName == name);
+            if (student is null)
+            {
+                throw new ArgumentNullException(nameof(student));
+            }
+            return student;
 
-            return students;
+
         }
 
-        
-        public List<Student> GetAll()  //4
+
+        public List<Student> GetAll()  
         {
-            return db.students;
+            return App.db.students;
         }
     }
 }

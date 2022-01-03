@@ -44,6 +44,10 @@ namespace CostasLikos_individual_part_a.RepositoryService
         public Course GetByID(int id)
         {
             var course = App.db.courses.Find(x => x.Id == id);
+            if (course is null)
+            {
+                throw new ArgumentNullException(nameof(course));
+            }
             return course;
         }
 

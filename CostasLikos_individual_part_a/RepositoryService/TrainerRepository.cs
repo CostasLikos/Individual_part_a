@@ -1,4 +1,5 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.Application;
 using CostasLikos_individual_part_a.DataBase;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,40 @@ namespace CostasLikos_individual_part_a.RepositoryService
 {
     public class TrainerRepository
     {
-        MyDatabase db = new MyDatabase();
-
+        
         public Trainer GetByID(int id)
         {
-            var trainer = db.trainers.Find(x => x.Id == id);
+            var trainer = App.db.trainers.Find(x => x.Id == id);
+            if (trainer is null)
+            {
+                throw new ArgumentNullException(nameof(trainer));
+            }
             return trainer;
         }
 
         public Trainer GetByName(string name)
         {
-            var trainer = db.trainers.Find(x => x.firstName == name);
+            var trainer = App.db.trainers.Find(x => x.firstName == name);
+            if (trainer is null)
+            {
+                throw new ArgumentNullException(nameof(trainer));
+            }
             return trainer;
         }
         public Trainer GetByLastName(string name)
         {
-            var trainer = db.trainers.Find(x => x.lastName == name);
+            var trainer = App.db.trainers.Find(x => x.lastName == name);
+            if (trainer is null)
+            {
+                throw new ArgumentNullException(nameof(trainer));
+            }
             return trainer;
         }
 
        
         public List<Trainer> GetAll()  
         {
-            return db.trainers;
+            return App.db.trainers;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Costas_Part_A;
+using CostasLikos_individual_part_a.Application;
 using CostasLikos_individual_part_a.DataBase;
 using System;
 using System.Collections.Generic;
@@ -10,25 +11,31 @@ namespace CostasLikos_individual_part_a.RepositoryService
 {
      public class AssignmentRepository
     {
-        MyDatabase db = new MyDatabase();
-
-
+       
         public Assignment GetByID(int id)
         {
-            var assignment = db.assignments.Find(x => x.Id == id);
+            var assignment = App.db.assignments.Find(x => x.Id == id);
+            if (assignment is null)
+            {
+                throw new ArgumentNullException(nameof(assignment));
+            }
             return assignment;
         }
 
         public Assignment GetByName(string name)
         {
-            var assignment = db.assignments.Find(x => x.title == name);
+            var assignment = App.db.assignments.Find(x => x.title == name);
+            if (assignment is null)
+            {
+                throw new ArgumentNullException(nameof(assignment));
+            }
             return assignment;
         }
 
        
         public List<Assignment> GetAll()  
         {
-            return db.assignments;
+            return App.db.assignments;
         }
     }
 }

@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using CostasLikos_individual_part_a.RepositoryService;
+using CostasLikos_individual_part_a.Views.Assignments;
+using CostasLikos_individual_part_a.Views.Trainers;
 
 namespace CostasLikos_individual_part_a.Views.HELPER
 {
@@ -110,11 +112,11 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine($"{"1 - COURSES",first}{"10 - CREATE A COURSE",second}{"14 - STUDENTS WITH MORE THAN ONE COURSE",third}{"PRESS 0 BUTTON TO EXIT THE APP",fourth}");
             Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION DATE",third}{"PRESS 99 BUTTON TO CLEAR THE CONSOLE",fourth}");
             Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"16 - FILTER DATA",third}{"",fourth}");
-            Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"",third}{"",fourth}");
-            Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"",third}");
-            Console.WriteLine($"{"6 - STUDENTS PER COURSE",first}{"",second}");
-            Console.WriteLine($"{"7 - TRAINERS PER COURSE",first}{"",second}");
-            Console.WriteLine($"{"8 - ASSIGNMENTS PER STUDENT",first}{"",second}");
+            Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"17 - ASSING A STUDENT TO A COURSE",third}{"",fourth}");
+            Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"18 - ASSING AN ASSINGMENT TO A COURSE",third}");
+            Console.WriteLine($"{"6 - STUDENTS PER COURSE",first}{"",second}{"19 - ASSING A TRAINER TO A COURSE",third}");
+            Console.WriteLine($"{"7 - TRAINERS PER COURSE",first}{"",second}{"20 - ASSING AN ASSIGNMENT TO A STUDENT",third}");
+            Console.WriteLine($"{"8 - ASSIGNMENTS PER STUDENT",first}{"",second}{"",third}");
             Console.WriteLine($"{"9 - STUDENT PER COURSE PER ASSIGNMENT",first}{"",second}");
             Console.WriteLine($"{"",first}{"",second}");
             Console.WriteLine($"{"",first}{"",second}");
@@ -127,23 +129,36 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 
                 switch (input)
                 {
-                    case "0": Views.HELPER.Helper.Exit(); break;
-                    case "1": Views.Courses.ViewCourse.PrintCourse(courses); break;
-                    case "2": Views.Students.ViewStudents.PrintStudent(students); break;
-                    case "3": Views.Assignments.ViewAssignments.PrintAssignment(assignments); break;
-                    case "4": Views.Trainers.ViewTrainers.PrintTrainers(trainers); break;
-                    case "5": Views.Courses.ViewCourse.PrintAssignmentPerCourse(courses); break;
-                    case "6": Views.Courses.ViewCourse.PrintStudentsPerCourse(courses); break;
-                    case "7": Views.Courses.ViewCourse.PrintTrainersPerCourse(courses); break;
-                    case "8": Views.Students.ViewStudents.PrintAssignmentPerStudent(students); break;
-                    case "9": Views.Assignments.ViewAssignments.PrintStudentPerCoursePerAssignmets(assignments); break;
-                    case "10": Views.Courses.ViewCourse.CreateCourse(courses); break;
-                    case "11": Views.Students.ViewStudents.CreateStudent(students); break;
-                    case "12": Views.Assignments.ViewAssignments.CreateAssignment(assignments); break;
-                    case "13": Views.Trainers.ViewTrainers.CreateTrainer(trainers); break;
+                    case "0": Exit(); break;
+                    case "1": ViewCourse.PrintCourse(courses); break;
+                    case "2": ViewStudents.PrintStudent(students); break;
+                    case "3": ViewAssignments.PrintAssignment(assignments); break;
+                    case "4": ViewTrainers.PrintTrainers(trainers); break;
+                    case "5": ViewCourse.PrintAssignmentPerCourse(courses); break;
+                    case "6": ViewCourse.PrintStudentsPerCourse(courses); break;
+                    case "7": ViewCourse.PrintTrainersPerCourse(courses); break;
+                    case "8": ViewStudents.PrintAssignmentPerStudent(students); break;
+                    case "9": ViewAssignments.PrintStudentPerCoursePerAssignmets(assignments); break;
+                    case "10": ViewCourse.CreateCourse(courses); break;
+                    case "11": ViewStudents.CreateStudent(students); break;
+                    case "12": ViewAssignments.CreateAssignment(assignments); break;
+                    case "13": ViewTrainers.CreateTrainer(trainers); break;
                     case "14":; break;
-                    case "15": Views.HELPER.Helper.DateForStudentsWithAssignmentToGive("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD",students); break;
-                    case "16":new AssignmentRepository().GetByName("skata"); break;
+                    case "15": DateForStudentsWithAssignmentToGive("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD",students); break;
+                    case "16":; break;
+                    case "17":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine();
+                        new StudentRepository().GetAll();
+                        Console.WriteLine("Plese input Student id");
+                        int stuid = Convert.ToInt32(Console.ReadLine());
+                        new CourseRepository().GetAll();
+                        Console.WriteLine("Plese input Course id");
+                        int couid = Convert.ToInt32(Console.ReadLine());
+                        new CourseRepository().AttachStudentToCourse(stuid, couid); break;
+                    case "18":new AssignmentRepository().GetByName("skata"); break;
+                    case "19":new AssignmentRepository().GetByName("skata"); break;
+                    case "20":new AssignmentRepository().GetByName("skata"); break;
                     case "99": Console.Clear(); ViewAllOptionsMenu(students, trainers, courses, assignments); break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
