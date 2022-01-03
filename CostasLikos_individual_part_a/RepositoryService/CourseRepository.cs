@@ -62,6 +62,14 @@ namespace CostasLikos_individual_part_a.RepositoryService
             return course;
         }
 
+        public void PrintAll(List<T>kati)
+        {
+            foreach (var course in courses)
+            {
+
+            }
+        }
+
         
 
        

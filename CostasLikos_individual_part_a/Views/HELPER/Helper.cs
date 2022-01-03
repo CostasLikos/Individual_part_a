@@ -73,11 +73,11 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 } while (input2 != "0" && input2 != "1" && input2 != "2" && input2 != "3" && input2 != "4" );
                 switch (input2)
                 {
-                    case "0": Helper.Exit(); break;
+                    case "0": Exit(); break;
                     case "1": ViewCourse.CreateCourse(courses); break;
                     case "2": ViewStudents.CreateStudent(students); break;
-                    case "3": Assignments.ViewAssignments.CreateAssignment(assignments); break;
-                    case "4": Trainers.ViewTrainers.CreateTrainer(trainers); break;
+                    case "3": ViewAssignments.CreateAssignment(assignments); break;
+                    case "4": ViewTrainers.CreateTrainer(trainers); break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
@@ -149,14 +149,18 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "17":
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine();
-                        new StudentRepository().GetAll();
+                        ViewStudents.PrintStudent(students);
                         Console.WriteLine("Plese input Student id");
-                        int stuid = Convert.ToInt32(Console.ReadLine());
-                        new CourseRepository().GetAll();
+                        int stuid = Convert.ToInt32(Console.ReadLine()); // ELEGXOS
+                        ViewCourse.PrintCourse(courses);
                         Console.WriteLine("Plese input Course id");
                         int couid = Convert.ToInt32(Console.ReadLine());
-                        new CourseRepository().AttachStudentToCourse(stuid, couid); break;
-                    case "18":new AssignmentRepository().GetByName("skata"); break;
+                        new CourseRepository().AttachStudentToCourse(stuid, couid);
+                        ViewCourse.PrintStudentsPerCourse(courses);
+                        break;
+                    case "18":
+                        
+                        break;
                     case "19":new AssignmentRepository().GetByName("skata"); break;
                     case "20":new AssignmentRepository().GetByName("skata"); break;
                     case "99": Console.Clear(); ViewAllOptionsMenu(students, trainers, courses, assignments); break;
