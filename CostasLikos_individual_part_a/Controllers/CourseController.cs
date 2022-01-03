@@ -20,10 +20,12 @@ namespace CostasLikos_individual_part_a.Controllers
         public void AssignStudentToCourse()
         {
             var students = studentService.GetAll();
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Assign student to Course");
             Console.WriteLine();
             Console.WriteLine("All students");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             foreach (var stu in students)
             {
                 Console.WriteLine($"{stu.Id,-15}{stu.firstName,-15}");
@@ -32,6 +34,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             var courses = courseService.GetAll();
             ViewCourse.PrintCourse(courses);
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Give Student Id");
             int studentId = Convert.ToInt32(Console.ReadLine());
@@ -40,6 +43,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             Console.WriteLine("Give Course Id");
             int courseId = Convert.ToInt32(Console.ReadLine());
+            Console.ResetColor();
 
             courseService.AttachStudentToCourse(studentId, courseId);
         }
@@ -47,10 +51,12 @@ namespace CostasLikos_individual_part_a.Controllers
         public void AssignAssignmentToCourse()
         {
             var asssignments = assignmentService.GetAll();
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Assign an assignment to Course");
             Console.WriteLine();
             Console.WriteLine("All assignmets");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             foreach (var ass in asssignments)
             {
                 Console.WriteLine($"{ass.Id,-15} - {ass.title,-15}");
@@ -59,6 +65,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             var courses = courseService.GetAll();
             ViewCourse.PrintCourse(courses);
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Give Assignment Id");
             int assId = Convert.ToInt32(Console.ReadLine());
@@ -67,16 +74,19 @@ namespace CostasLikos_individual_part_a.Controllers
 
             Console.WriteLine("Give Course Id");
             int courseId = Convert.ToInt32(Console.ReadLine());
+            Console.ResetColor();
 
             courseService.AttachAssignmentToCourse(assId, courseId);
         }
         public void AssignTrainerToCourse()
         {
             var trainers = trainerService.GetAll();
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Assign a trainer to Course");
             Console.WriteLine();
             Console.WriteLine("All trainers");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             foreach (var tr in trainers)
             {
                 Console.WriteLine($"{tr.Id,-15} - {tr.firstName,-5}{tr.lastName,-5}");
@@ -85,6 +95,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             var courses = courseService.GetAll();
             ViewCourse.PrintCourse(courses);
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Give Trainer Id");
             int trId = Convert.ToInt32(Console.ReadLine());
@@ -93,6 +104,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             Console.WriteLine("Give Course Id");
             int courseId = Convert.ToInt32(Console.ReadLine());
+            Console.ResetColor();
 
             courseService.AttachTrainerToCourse(trId, courseId);
         }

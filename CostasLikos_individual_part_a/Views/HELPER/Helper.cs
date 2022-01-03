@@ -10,12 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using CostasLikos_individual_part_a.RepositoryService;
 
 namespace CostasLikos_individual_part_a.Views.HELPER
 {
     
-    class Helper
+    public static class Helper
     {
+
         
         public static void ViewCreateMenu(List<Student> students,List<Trainer> trainers,List<Course> courses,List<Assignment> assignments)
         {
@@ -141,7 +143,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "13": Views.Trainers.ViewTrainers.CreateTrainer(trainers); break;
                     case "14":; break;
                     case "15": Views.HELPER.Helper.DateForStudentsWithAssignmentToGive("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD",students); break;
-                    case "16":; break;
+                    case "16":new AssignmentRepository().GetByName("skata"); break;
                     case "99": Console.Clear(); ViewAllOptionsMenu(students, trainers, courses, assignments); break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;

@@ -19,9 +19,11 @@ namespace CostasLikos_individual_part_a.Controllers
         {
             var asssignments = assignmentService.GetAll();
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Assign an assignment to a Student");
             Console.WriteLine();
-            Console.WriteLine("All assignmets");
+            Console.WriteLine("All assignmets:");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             foreach (var ass in asssignments)
             {
                 Console.WriteLine($"{ass.Id,-15} - {ass.title,-15}");
@@ -30,6 +32,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             var students = studentService.GetAll();
             ViewStudents.PrintStudent(students);
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Give Assignment Id");
             int assId = Convert.ToInt32(Console.ReadLine());
@@ -38,6 +41,7 @@ namespace CostasLikos_individual_part_a.Controllers
 
             Console.WriteLine("Give Student Id");
             int stuId = Convert.ToInt32(Console.ReadLine());
+            Console.ResetColor();
 
             courseService.AttachAssignmentToCourse(assId, stuId);
         }

@@ -3,7 +3,7 @@
 namespace Costas_Part_A
 {
 
-    class Trainer
+     public class Trainer
     {
 
         //CTOR--------------------------------------

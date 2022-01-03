@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Costas_Part_A
 {
-    class Course
+     public class Course
     {
 
         //CTOR--------------------------

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Costas_Part_A
 {
-    class Assignment
+     public class Assignment
     {
         //CTOR--------------------------
         public Assignment(int Id , string title, string description, DateTime subDateTime, int oralMark, int totalMark)

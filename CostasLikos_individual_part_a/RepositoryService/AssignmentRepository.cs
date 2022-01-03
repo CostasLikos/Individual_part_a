@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.RepositoryService
 {
-    class AssignmentRepository
+     public class AssignmentRepository
     {
         MyDatabase db = new MyDatabase();
 
