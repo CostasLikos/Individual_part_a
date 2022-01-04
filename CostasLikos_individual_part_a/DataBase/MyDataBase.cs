@@ -57,12 +57,12 @@ namespace CostasLikos_individual_part_a.DataBase
             Course c4 = new Course(4,"Python", "CB12", TypeEnum.PartTime, new DateTime(2021, 2, 12), new DateTime(2021, 8, 12));
             Course c5 = new Course(5,"Cobol", "CB11", TypeEnum.FullTime, new DateTime(2021, 1, 1), new DateTime(2021, 4, 1));
             Course c6 = new Course(6,"C++", "CB10", TypeEnum.PartTime, new DateTime(2021, 1, 20), new DateTime(2021, 7, 20));
-            Course c7 = new Course(7, "Csharp", "CB09", TypeEnum.PartTime, new DateTime(2021, 1, 1), new DateTime(2021, 7, 1));
-            Course c8 = new Course(8, "Java", "CB08", TypeEnum.FullTime, new DateTime(2020, 5, 10), new DateTime(2020, 8, 10));
-            Course c9 = new Course(9, "JavaScript", "CB07", TypeEnum.PartTime, new DateTime(2019, 3, 5), new DateTime(2019, 9, 5));
-            Course c10 = new Course(10, "Python", "CB06", TypeEnum.PartTime, new DateTime(2018, 2, 10), new DateTime(2018, 8, 10));
-            Course c11 = new Course(11, "Cobol", "CB05", TypeEnum.FullTime, new DateTime(2018, 1, 1), new DateTime(2018, 4, 1));
-            Course c12 = new Course(12, "C++", "CB04", TypeEnum.PartTime, new DateTime(2017, 1, 20), new DateTime(2017, 7, 20));
+            Course c7 = new Course(7, "Csharp - FINISHED", "CB09", TypeEnum.PartTime, new DateTime(2021, 1, 1), new DateTime(2021, 7, 1));
+            Course c8 = new Course(8, "Java - FINISHED", "CB08", TypeEnum.FullTime, new DateTime(2020, 5, 10), new DateTime(2020, 8, 10));
+            Course c9 = new Course(9, "JavaScript - FINISHED", "CB07", TypeEnum.PartTime, new DateTime(2019, 3, 5), new DateTime(2019, 9, 5));
+            Course c10 = new Course(10, "Python - FINISHED", "CB06", TypeEnum.PartTime, new DateTime(2018, 2, 10), new DateTime(2018, 8, 10));
+            Course c11 = new Course(11, "Cobol - FINISHED", "CB05", TypeEnum.FullTime, new DateTime(2018, 1, 1), new DateTime(2018, 4, 1));
+            Course c12 = new Course(12, "C++ - FINISHED", "CB04", TypeEnum.PartTime, new DateTime(2017, 1, 20), new DateTime(2017, 7, 20));
             #endregion
 
 
