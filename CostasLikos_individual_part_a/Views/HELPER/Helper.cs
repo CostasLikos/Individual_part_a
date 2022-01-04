@@ -150,11 +150,10 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine();
                         ViewStudents.PrintStudent(students);
-                        Console.WriteLine("Plese input Student id");
-                        int stuid = Convert.ToInt32(Console.ReadLine()); // ELEGXOS
+                        int stuid = InputNumber("Please choose and input Student's ID");
                         ViewCourse.PrintCourse(courses);
-                        Console.WriteLine("Plese input Course id");
-                        int couid = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine();
+                        int couid = InputNumber("Please choose and input Course's ID");
                         new CourseRepository().AttachStudentToCourse(stuid, couid);
                         ViewCourse.PrintStudentsPerCourse(courses);
                         break;
@@ -189,15 +188,28 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
+            if (string.IsNullOrEmpty(result))
+            {
+                throw new ArgumentNullException(nameof(result));
+            }
             return result;
         }
 
         public static int InputNumber(string placeholder)
         {
-
+            int number;
             Console.WriteLine(placeholder);
-            int result = Convert.ToInt32(Console.ReadLine());
-            return result;
+            string result = Console.ReadLine();
+            bool success = int.TryParse(result, out number);
+            if (success)
+            {
+                Console.WriteLine($"Converted '{result}' to {number}.");
+            }
+            else
+            {
+                Console.WriteLine($"Attempted conversion of '{result ?? "<null>"}' failed.");
+            }
+            return number;
         }
 
         public static double InputDouble(string placeholder)
@@ -205,9 +217,12 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             Console.WriteLine(placeholder);
             double result = Convert.ToDouble(Console.ReadLine());
+            if (double.IsNaN(result)||double.IsInfinity(result))
+            {
+                throw new ArgumentNullException(nameof(result));
+            }
             return result;
         }
-        public static int Counterplus1(List<Course> courses) => courses.Count() + 1; //??
 
         public static TypeEnum InputEnumOption(string placeholder)
         {
@@ -240,8 +255,6 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             DateTime.TryParse(date, out result);
             return result == default(DateTime) ? false : true;
         }
-
-
 
         public static DateTime InputStartDate(string placeholder)
         {
