@@ -48,15 +48,25 @@ namespace CostasLikos_individual_part_a.DataBase
             Student s19 = new Student(19,"Naruto", "Uzumaki", new DateTime(1956, 6, 18), 2250);
             Student s20 = new Student(20,"Dexter", "Morgan", new DateTime(1972, 3, 19), 2500);
             #endregion
+
+            #region Seeding Courses
             //Courses-----------------
             Course c1 = new Course(1,"Csharp", "CB15", TypeEnum.PartTime, new DateTime(2021, 1, 1), new DateTime(2021, 7, 1));
-            Course c2 = new Course(2,"Java", "CB14", TypeEnum.FullTime, new DateTime(2020, 1, 1), new DateTime(2020, 7, 1));
-            Course c3 = new Course(3,"JavaScript", "CB12", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
-            Course c4 = new Course(4,"Python", "CB11", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
-            Course c5 = new Course(5,"Cobol", "CB08", TypeEnum.PartTime, new DateTime(2019, 1, 1), new DateTime(2019, 7, 1));
-            Course c6 = new Course(6,"C++", "CB14", TypeEnum.PartTime, new DateTime(2020, 1, 1), new DateTime(2019, 7, 1));
+            Course c2 = new Course(2,"Java", "CB14", TypeEnum.FullTime, new DateTime(2021, 5, 10), new DateTime(2021, 8, 10));
+            Course c3 = new Course(3,"JavaScript", "CB13", TypeEnum.PartTime, new DateTime(2021, 3, 5), new DateTime(2021, 9, 5));
+            Course c4 = new Course(4,"Python", "CB12", TypeEnum.PartTime, new DateTime(2021, 2, 31), new DateTime(2021, 8, 31));
+            Course c5 = new Course(5,"Cobol", "CB11", TypeEnum.FullTime, new DateTime(2021, 1, 1), new DateTime(2021, 4, 1));
+            Course c6 = new Course(6,"C++", "CB10", TypeEnum.PartTime, new DateTime(2021, 1, 20), new DateTime(2021, 7, 20));
+            Course c7 = new Course(7, "Csharp", "CB09", TypeEnum.PartTime, new DateTime(2021, 1, 1), new DateTime(2021, 7, 1));
+            Course c8 = new Course(8, "Java", "CB08", TypeEnum.FullTime, new DateTime(2020, 5, 10), new DateTime(2020, 8, 10));
+            Course c9 = new Course(9, "JavaScript", "CB07", TypeEnum.PartTime, new DateTime(2019, 3, 5), new DateTime(2019, 9, 5));
+            Course c10 = new Course(10, "Python", "CB06", TypeEnum.PartTime, new DateTime(2018, 2, 31), new DateTime(2018, 8, 31));
+            Course c11 = new Course(11, "Cobol", "CB05", TypeEnum.FullTime, new DateTime(2018, 1, 1), new DateTime(2018, 4, 1));
+            Course c12 = new Course(12, "C++", "CB04", TypeEnum.PartTime, new DateTime(2017, 1, 20), new DateTime(2017, 7, 20));
+            #endregion
 
 
+            #region Seeding Assignments
             //Assingment----------------------
             Assignment a1 = new Assignment(1,"Calculator", "Make a functional calculator", new DateTime(2022, 12, 30), 20, 80);
             Assignment a2 = new Assignment(2,"Card game", "Make a card game with 52 cards", new DateTime(2022, 02, 15), 30, 70);
@@ -67,27 +77,32 @@ namespace CostasLikos_individual_part_a.DataBase
             Assignment a7 = new Assignment(7,"DataBase", "Make a full functional Database", new DateTime(2022, 01, 20), 10, 90);
             Assignment a8 = new Assignment(8,"Indinidual Project", "Architecture - Contact your Trainer.", new DateTime(2022, 03, 20), 10, 90);
             Assignment a9 = new Assignment(9,"Final Project", "Show us your work!", new DateTime(2022, 04, 20), 10, 90);
+            #endregion
 
+            #region Seeding Trainers
             //Trainers-------------------------
             Trainer t1 = new Trainer(1,"Ellias", "Gweanarth", "FrondEnd");
             Trainer t2 = new Trainer(2,"Nicky", "Something", "BackEnd");
             Trainer t3 = new Trainer(3,"Elun", "Asshen", "DataBases");
             Trainer t4 = new Trainer(4,"Ned", "Alison", "DotNet");
             Trainer t5 = new Trainer(5,"Dimitris", "Papas", "Interfaces");
+            #endregion
 
+            #region Populate Lists
             //Polulate Data
 
             students = new List<Student>() { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20 };
-            assignments = new List<Assignment>() { a1,a2,a3,a4,a5,a6,a7,a8,a9 };
-            courses = new List<Course>() {c1,c2,c3,c4,c5,c6 };
-            trainers = new List<Trainer>() { t1, t2, t3,t4,t5 };
+            assignments = new List<Assignment>() { a1, a2, a3, a4, a5, a6, a7, a8, a9 };
+            courses = new List<Course>() { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12 };
+            trainers = new List<Trainer>() { t1, t2, t3, t4, t5 };
+            #endregion
 
             #region Pairing
             //PAIRING===========================
             //==================================
 
             //Csharp - c1
-              
+
 
             StudentsPerCourse.Pair(s1,c1);
             StudentsPerCourse.Pair(s2,c1);
