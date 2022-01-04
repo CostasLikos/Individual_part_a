@@ -143,8 +143,8 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "11": ViewStudents.CreateStudent(students); break;
                     case "12": ViewAssignments.CreateAssignment(assignments); break;
                     case "13": ViewTrainers.CreateTrainer(trainers); break;
-                    case "14":; break;
-                    case "15": DateForStudentsWithAssignmentToGive("  PLEASE IN PUT THE DATE YOU WANT TO CHECK.\n       format: YYYY-MM-DD",students); break;
+                    case "14": StudentsWithMoreThanOneCourse("These are the students with more than one course :",students); break;
+                    case "15": DateForStudentsWithAssignmentToGive("  Please input the date you want to check for pending assingments.\n       format: YYYY-MM-DD",students); break;
                     case "16":; break;
                     case "17":
                         Console.ForegroundColor = ConsoleColor.Blue;
@@ -360,7 +360,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     weekstart.AddDays(-4);
                 }
             }
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
             foreach (var stu in students)
             {
                 foreach (Assignment ass in stu.assignments)
@@ -373,6 +373,30 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 }
 
             }
+            Console.ResetColor();
+        }
+
+        public static void StudentsWithMoreThanOneCourse(string placeholder, List<Student> students)
+        {
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(placeholder);
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            foreach (var stu in students)
+            {
+                foreach (Course cour in stu.courses)
+                {
+                    if (stu.courses.Count > 1)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} \n Courses number: { stu.courses.Count}");
+                    }
+                }
+
+            }
+            Console.ResetColor();
         }
 
 
