@@ -36,7 +36,7 @@ namespace CostasLikos_individual_part_a.Views.Assignments
             
             string description = Helper.InputText("Give Assignment's description");
             
-            DateTime subDateTime = Helper.InputStartDate("Choose the subDateTime of the assignmet");
+            DateTime subDateTime = Helper.InputStartDate("Choose the submission date of the assignmet");
             
             int oralMark = Helper.InputNumber("Give the oral mark of assignmet");
 
@@ -47,7 +47,7 @@ namespace CostasLikos_individual_part_a.Views.Assignments
             assignments.Add(obj);
             Console.WriteLine("Assignment Created");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"   \nID: {Id}   \nTITLE: {title}   \nDESCIPTION: {description}   \nSAUBMITION DATE: {subDateTime}   \nORAL MARK: {oralMark}   \nTOTAL MARK: {totalMark}");
+            Console.WriteLine($"   \nID: {Id}   \nTITLE: {title}   \nDESCIPTION: {description}   \nSUBMISSION DATE: {subDateTime.ToShortDateString()}   \nORAL MARK: {oralMark}   \nTOTAL MARK: {totalMark}");
            
         }
 
@@ -67,7 +67,7 @@ namespace CostasLikos_individual_part_a.Views.Assignments
                     foreach (var k in j.students)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
-                        Console.WriteLine($"{"Students:",-15}{k.Id,-15}{k.firstName,-15}{k.lastName,-15}{k.dateOfBirth,-15}{k.fees,-15}");
+                        Console.WriteLine($"{"Students:",-15}{k.Id,-15}{k.firstName,-15}{k.lastName,-15}{k.dateOfBirth.ToShortDateString(),-15}{k.fees,-15}");
                     }
                 }
             }

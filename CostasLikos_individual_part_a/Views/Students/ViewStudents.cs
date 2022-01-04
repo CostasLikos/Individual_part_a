@@ -21,7 +21,7 @@ namespace CostasLikos_individual_part_a.Views.Students
             Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (var stu in students)
             {
-                Console.WriteLine($"    {stu.Id,-10}{stu.firstName,-30}{stu.lastName,-30}{stu.dateOfBirth,-30}{stu.fees,-30}");
+                Console.WriteLine($"    {stu.Id,-10}{stu.firstName,-30}{stu.lastName,-30}{stu.dateOfBirth.ToShortDateString(),-30}{stu.fees,-30}");
             }
             Console.ResetColor();
         }
@@ -44,7 +44,7 @@ namespace CostasLikos_individual_part_a.Views.Students
             students.Add(obj);
             Console.WriteLine("Student Created");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nDATE OF BIRTH: {bdate}   \nFEES: {fees}");
+            Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nDATE OF BIRTH: {bdate.ToShortDateString()}   \nFEES: {fees}");
             
         }
 

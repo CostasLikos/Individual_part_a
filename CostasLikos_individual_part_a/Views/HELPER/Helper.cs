@@ -368,7 +368,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     if (ass.subDateTime > weekstart && ass.subDateTime < date)
                     {
                         Console.WriteLine();
-                        Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { ass.title} - { ass.subDateTime}");
+                        Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { ass.title} - { ass.subDateTime.ToShortDateString()}");
                     }
                 }
 
