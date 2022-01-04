@@ -111,11 +111,11 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine();
             Console.WriteLine($"{"1 - COURSES",first}{"10 - CREATE A COURSE",second}{"14 - STUDENTS WITH MORE THAN ONE COURSE",third}{"PRESS 0 BUTTON TO EXIT THE APP",fourth}");
             Console.WriteLine($"{"2 - STUDENT",first}{"11 - CREATE A STUDENT",second}{"15 - PENDING ASSIGNMENT SUBMISSION DATE",third}{"PRESS 99 BUTTON TO CLEAR THE CONSOLE",fourth}");
-            Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"16 - FILTER DATA",third}{"",fourth}");
-            Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"17 - ASSING A STUDENT TO A COURSE",third}{"",fourth}");
-            Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"18 - ASSING AN ASSINGMENT TO A COURSE",third}");
-            Console.WriteLine($"{"6 - STUDENTS PER COURSE",first}{"",second}{"19 - ASSING A TRAINER TO A COURSE",third}");
-            Console.WriteLine($"{"7 - TRAINERS PER COURSE",first}{"",second}{"20 - ASSING AN ASSIGNMENT TO A STUDENT",third}");
+            Console.WriteLine($"{"3 - ASSIGNMENTS",first}{"12 - CREATE AN ASSIGNMENT",second}{"16 - FILTER DATA",third}");
+            Console.WriteLine($"{"4 - TRAINERS",first}{"13 - CREATE A TRAINER",second}{"17 - MERGE A STUDENT TO A COURSE",third}{"",fourth}");
+            Console.WriteLine($"{"5 - ASSIGNMENTS PER COURSE",first}{"",second}{"18 - MERGE AN ASSINGMENT TO A COURSE",third}");
+            Console.WriteLine($"{"6 - STUDENTS PER COURSE",first}{"",second}{"19 - MERGE A TRAINER TO A COURSE",third}");
+            Console.WriteLine($"{"7 - TRAINERS PER COURSE",first}{"",second}{"20 - MERGE AN ASSIGNMENT TO A STUDENT",third}");
             Console.WriteLine($"{"8 - ASSIGNMENTS PER STUDENT",first}{"",second}{"",third}");
             Console.WriteLine($"{"9 - STUDENT PER COURSE PER ASSIGNMENT",first}{"",second}");
             Console.WriteLine($"{"",first}{"",second}");
@@ -153,15 +153,43 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         int stuid = InputNumber("Please choose and input Student's ID");
                         ViewCourse.PrintCourse(courses);
                         Console.WriteLine();
-                        int couid = InputNumber("Please choose and input Course's ID");
-                        new CourseRepository().AttachStudentToCourse(stuid, couid);
+                        int couidstu = InputNumber("Please choose and input Course's ID");
+                        new CourseRepository().AttachStudentToCourse(stuid, couidstu);
                         ViewCourse.PrintStudentsPerCourse(courses);
                         break;
                     case "18":
-                        
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine();
+                        ViewAssignments.PrintAssignment(assignments);
+                        int assid = InputNumber("Please choose and input Assignment's ID");
+                        ViewCourse.PrintCourse(courses);
+                        Console.WriteLine();
+                        int couidass = InputNumber("Please choose and input Course's ID");
+                        new CourseRepository().AttachAssignmentToCourse(assid, couidass);
+                        ViewCourse.PrintAssignmentPerCourse(courses);
                         break;
-                    case "19":new AssignmentRepository().GetByName("skata"); break;
-                    case "20":new AssignmentRepository().GetByName("skata"); break;
+                    case "19":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine();
+                        ViewTrainers.PrintTrainers(trainers);
+                        int traid = InputNumber("Please choose and input Trainer's ID");
+                        ViewCourse.PrintCourse(courses);
+                        Console.WriteLine();
+                        int couidtra = InputNumber("Please choose and input Course's ID");
+                        new CourseRepository().AttachTrainerToCourse(traid, couidtra);
+                        ViewCourse.PrintTrainersPerCourse(courses);
+                        break;
+                    case "20":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine();
+                        ViewAssignments.PrintAssignment(assignments);
+                        int assid2 = InputNumber("Please choose and input Assignment's ID");
+                        ViewStudents.PrintStudent(students);
+                        Console.WriteLine();
+                        int stuidass = InputNumber("Please choose and input Student's ID");
+                        new StudentRepository().AttachAssignmentToStudent(assid2, stuidass);
+                        ViewStudents.PrintAssignmentPerStudent(students);
+                        break;
                     case "99": Console.Clear(); ViewAllOptionsMenu(students, trainers, courses, assignments); break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -177,10 +205,49 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ResetColor();
         }
 
-        public static void Exit()
+         public static void Exit()
         {
-            Console.WriteLine("THANK YOU FOR VISITING");
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 30; j++)
+                {
+                    Console.Clear();
+
+                    // steam
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("       . . . . o o o o o o");
+                    for (int s = 0; s < j / 2; s++)
+                    {
+                        Console.Write(" o");
+                    }
+                    Console.WriteLine();
+
+                    var margin = "".PadLeft(j);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine(margin + "                _____      o");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine(margin + "       ____====  ]OO|_n_n__][.");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine(margin + "      [________]_|__|________)< ");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine(margin + "       oo    oo  'oo OOOO-| oo\\_");
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.WriteLine("   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+");
+
+                    Thread.Sleep(50);
+                }
+                Exit2();
+            }
+        }
+
+        public static void Exit2()
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("THANK YOU FOR VISITING !");
+            Console.ResetColor();
             Environment.Exit(0);
+
         }
 
         public static string InputText(string placeholder)
