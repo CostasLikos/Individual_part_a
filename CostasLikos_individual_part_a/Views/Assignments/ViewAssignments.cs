@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CostasLikos_individual_part_a.Views.Assignments
 {
-    
+
     class ViewAssignments
     {
         public static void PrintAssignment(List<Assignment> assignments)
@@ -30,25 +30,27 @@ namespace CostasLikos_individual_part_a.Views.Assignments
 
         public static void CreateAssignment(List<Assignment> assignments)
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+
             int Id = (assignments[assignments.Count - 1].Id) + 1;
 
-            string title = Helper.InputText("Give Assignment's title");
-            
-            string description = Helper.InputText("Give Assignment's description");
-            
-            DateTime subDateTime = Helper.InputStartDate("Choose the submission date of the assignmet");
-            
-            int oralMark = Helper.InputNumber("Give the oral mark of assignmet");
+            string title = Helper.InputText("PLEASE INPUT ASSIGNMENT'S TITLE");
 
-            int totalMark = Helper.InputNumber("Give the total mark of assignmet");
+            string description = Helper.InputText("PLESE TYPE YOUR DESCEPTION OF THE ASSIGNMENT");
+
+            DateTime subDateTime = Helper.InputStartDate("PLEASE INPUT THE SUBMISSION DATE OF THE ASSIGNMENT. ex : YYYY-MM-DD");
+
+            int oralMark = Helper.InputNumber("PLEASE INPUT THE ORAL MARK OF THE ASSIGNMENT");
+
+            int totalMark = Helper.InputNumber("PLEASE INPUT THE TOTAL MARK OF THE ASSIGNMENT");
 
             Assignment obj = new Assignment(Id, title, description, subDateTime, oralMark, totalMark);
 
             assignments.Add(obj);
-            Console.WriteLine("Assignment Created");
+            Console.WriteLine("ASSIGNMENT CREATED");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"   \nID: {Id}   \nTITLE: {title}   \nDESCIPTION: {description}   \nSUBMISSION DATE: {subDateTime.ToShortDateString()}   \nORAL MARK: {oralMark}   \nTOTAL MARK: {totalMark}");
-           
+            Console.ResetColor();
         }
 
         public static void PrintStudentPerCoursePerAssignmets(List<Assignment> assignments)

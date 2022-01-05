@@ -16,12 +16,12 @@ using CostasLikos_individual_part_a.Views.Trainers;
 
 namespace CostasLikos_individual_part_a.Views.HELPER
 {
-    
+
     public static class Helper
     {
 
-        
-        public static void ViewCreateMenu(List<Student> students,List<Trainer> trainers,List<Course> courses,List<Assignment> assignments)
+
+        public static void ViewCreateMenu(List<Student> students, List<Trainer> trainers, List<Course> courses, List<Assignment> assignments)
         {
 
             int input;
@@ -49,28 +49,28 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING WHAT YOU WANT TO CREATE    ");
                 Console.WriteLine();
                 Console.ResetColor();
-                
 
-                
+
+
 
                 do
                 {
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    Thread.Sleep(300);
+                    Thread.Sleep(100);
                     Console.WriteLine($"{"  PRESS 1 TO CREATE YOUR COURSE  "}");
-                    Thread.Sleep(100);
+                    Thread.Sleep(50);
                     Console.WriteLine($"{"  PRESS 2 TO CREATE YOUR STUDENT  "}");
-                    Thread.Sleep(100);
+                    Thread.Sleep(50);
                     Console.WriteLine($"{"  PRESS 3 TO CREATE YOUR ASSIGNMENT  "}");
-                    Thread.Sleep(100);
+                    Thread.Sleep(50);
                     Console.WriteLine($"{"  PRESS 4 TO CREATE YOUR TRAINER  "}");
-                    Thread.Sleep(100);
+                    Thread.Sleep(50);
                     Console.WriteLine($"{"  PRESS 0 TO EXIT  "}");
                     Console.ResetColor();
-                    
+
                     input2 = Console.ReadLine();
-                    
-                } while (input2 != "0" && input2 != "1" && input2 != "2" && input2 != "3" && input2 != "4" );
+
+                } while (input2 != "0" && input2 != "1" && input2 != "2" && input2 != "3" && input2 != "4");
                 switch (input2)
                 {
                     case "0": Exit(); break;
@@ -88,7 +88,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             }
 
             Console.ReadKey();
-            Helper.ViewAllOptionsMenu(students,trainers,courses,assignments);
+            ViewAllOptionsMenu(students, trainers, courses, assignments);
 
         }
         public static void ViewAllOptionsMenu(List<Student> students, List<Trainer> trainers, List<Course> courses, List<Assignment> assignments)
@@ -126,7 +126,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             {
 
                 input = Console.ReadLine();
-                
+
                 switch (input)
                 {
                     case "0": Exit(); break;
@@ -143,8 +143,8 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "11": ViewStudents.CreateStudent(students); break;
                     case "12": ViewAssignments.CreateAssignment(assignments); break;
                     case "13": ViewTrainers.CreateTrainer(trainers); break;
-                    case "14": StudentsWithMoreThanOneCourse("These are the students with more than one course :",students); break;
-                    case "15": DateForStudentsWithAssignmentToGive("  Please input the date you want to check for pending assingments.\n       format: YYYY-MM-DD",students); break;
+                    case "14": StudentsWithMoreThanOneCourse("These are the students with more than one course :", students); break;
+                    case "15": DateForStudentsWithAssignmentToGive("  Please input the date you want to check for pending assingments.\n       format: YYYY-MM-DD", students); break;
                     case "16":; break;
                     case "17":
                         Console.ForegroundColor = ConsoleColor.Blue;
@@ -205,7 +205,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ResetColor();
         }
 
-         public static void Exit()
+        public static void Exit()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -213,7 +213,6 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 {
                     Console.Clear();
 
-                    // steam
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write("       . . . . o o o o o o");
                     for (int s = 0; s < j / 2; s++)
@@ -255,10 +254,11 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
-            if (string.IsNullOrEmpty(result))
+            do
             {
-                throw new ArgumentNullException(nameof(result));
-            }
+                Console.WriteLine($" There as an error with your input: {nameof(result)}\n your input can not be empty or null: {nameof(result)}\n Please try again. ");
+                result = Console.ReadLine();
+            } while (string.IsNullOrEmpty(result));
             return result;
         }
 
@@ -268,15 +268,21 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
             bool success = int.TryParse(result, out number);
-            if (success)
+            do
             {
-                Console.WriteLine($"Converted '{result}' to {number}.");
-            }
-            else
-            {
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine($"Attempted conversion of '{result ?? "<null>"}' failed.");
-            }
+                Console.WriteLine();
+                Console.WriteLine($"Please Try again");
+                result = Console.ReadLine();
+                success = int.TryParse(result, out number);
+
+            } while (!success);
+
+            Console.WriteLine($"Converted '{result}' to {number}.");
             return number;
+
         }
 
         public static double InputDouble(string placeholder)
@@ -284,10 +290,12 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             Console.WriteLine(placeholder);
             double result = Convert.ToDouble(Console.ReadLine());
-            if (double.IsNaN(result)||double.IsInfinity(result))
+            do
             {
-                throw new ArgumentNullException(nameof(result));
-            }
+                Console.WriteLine($" There was an error converting :{nameof(result)}.\n\n Please try again.");
+                result = Convert.ToDouble(Console.ReadLine());
+
+            } while (double.IsNaN(result) || double.IsInfinity(result));
             return result;
         }
 
@@ -370,12 +378,12 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static void DateForStudentsWithAssignmentToGive(string placeholder, List<Student> students)
         {
-            
+
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(placeholder);
             Console.ResetColor();
             DateTime date = Convert.ToDateTime(Console.ReadLine());
-           
+
 
 
 

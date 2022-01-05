@@ -29,15 +29,16 @@ namespace CostasLikos_individual_part_a.Views.Courses
 
         public static void CreateCourse(List<Course> courses)
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             int Id = (courses[courses.Count - 1].Id)+1;
             //title
-            string title = Helper.InputText("Give Course's title");
+            string title = Helper.InputText("PLEASE INPUT COURSE'S TITLE");
             //stream
-            string stream = Helper.InputText("Give Course's stream");
+            string stream = Helper.InputText("PLEASE INPUT COURSE'S STREAM");
             //enum
-            TypeEnum choise = Helper.InputEnumOption("Choose the type 1 for Full-Time or 2 for Part-Time");
+            TypeEnum choise = Helper.InputEnumOption("PLASE CHOOSE 1 OR 2 FOR:\n      1 ---> Full Time\n      2 ---> Part Time");
             //StartDate
-            DateTime start = Helper.InputStartDate("Choose the starting date of the course");
+            DateTime start = Helper.InputStartDate("PLEASE INPUT THE STARTING DATE OF A COURSE");
             //EndDate
             DateTime end = Helper.InputEndDate(start,choise);
 
@@ -45,10 +46,10 @@ namespace CostasLikos_individual_part_a.Views.Courses
             
             
             courses.Add(obj);
-            Console.WriteLine("Course Created");
+            Console.WriteLine("COURSE CREATED");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"   \nID: {Id}   \nTITLE: {title}   \nSTREAM: {stream}   \nTYPE: {choise}   \nSTART DATE: {start.ToShortDateString()}   \nEND DATE: {end.ToShortDateString()}");
-            
+            Console.ResetColor();
         }
 
         public static void PrintStudentsPerCourse(List<Course> courses)

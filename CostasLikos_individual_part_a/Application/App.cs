@@ -25,11 +25,11 @@ namespace CostasLikos_individual_part_a.Application
             Console.WriteLine();
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Thread.Sleep(700);
+            Thread.Sleep(200);
             Console.WriteLine($"{"  PRESS 1 TO CREATE YOUR DATA"}");
-            Thread.Sleep(700);
+            Thread.Sleep(200);
             Console.WriteLine($"{"  PRESS 2 TO PROCEED WITHOUR CREATING NEW DATA"}");
-            Thread.Sleep(700);
+            Thread.Sleep(200);
             Console.WriteLine($"{"  PRESS 0 TO EXIT APPLICATION"}");
             Console.ResetColor();
 

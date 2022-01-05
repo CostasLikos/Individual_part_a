@@ -17,10 +17,7 @@ namespace Costas_Part_A
        
         static void Main(string[] args)
         {
-
           App.Run();
-
-            //helper 154 restriction
         }
     }
 }

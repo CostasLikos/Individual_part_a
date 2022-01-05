@@ -28,24 +28,25 @@ namespace CostasLikos_individual_part_a.Views.Students
 
         public static void CreateStudent(List<Student> students)
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             int Id = (students[students.Count - 1].Id) + 1;
             
-            string firstname = Helper.InputText("Give student's firstname");
+            string firstname = Helper.InputText("PLEASE INPUT STUDENT'S FIRSTNAME");
             
-            string lastname = Helper.InputText("Give student's lastname");
+            string lastname = Helper.InputText("PLEASE INPUT STUDENT'S SURNAME");
             
-            DateTime bdate = Helper.InputStartDate("Choose student's date of birth");
+            DateTime bdate = Helper.InputStartDate("PLEASE INPUT STUDENT'S DATE OF BIRTH");
 
-            double fees = Helper.InputDouble("Give student's fees");
+            double fees = Helper.InputDouble("PLEASE INPUT STUDENT'S FEES");
 
             Student obj = new Student(Id, firstname, lastname, bdate, fees);
 
 
             students.Add(obj);
-            Console.WriteLine("Student Created");
+            Console.WriteLine("STUDENT CREATED");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nDATE OF BIRTH: {bdate.ToShortDateString()}   \nFEES: {fees}");
-            
+            Console.ResetColor();
         }
 
        

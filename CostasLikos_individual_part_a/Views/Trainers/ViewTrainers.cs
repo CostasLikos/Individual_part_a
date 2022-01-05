@@ -29,22 +29,24 @@ namespace CostasLikos_individual_part_a.Views.Trainers
 
         public static void CreateTrainer(List<Trainer> trainers)
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+
             int Id = (trainers[trainers.Count - 1].Id) + 1;
 
-            string firstname = Helper.InputText("Give Trainers's firstname");
+            string firstname = Helper.InputText("PLEASE INPUT TRAINER'S FIRST NAME");
 
-            string lastname = Helper.InputText("Give Trainers's lastname");
+            string lastname = Helper.InputText("PLEASE INPUT TRAINER'S SURNAME");
             
-            string subject = Helper.InputText("Give Trainers's subject");
+            string subject = Helper.InputText("PLEASE INPUT TRAINER'S SUBJECT");
 
             Trainer obj = new Trainer(Id, firstname, lastname, subject);
 
             trainers.Add(obj);
-            Console.WriteLine("Trainer Created");
+            Console.WriteLine("TRAINER CREATED");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"   \nID: {Id}   \nFULL NAME: {firstname} {lastname}   \nSUBJECT: {subject}");
             MyDatabase db = new MyDatabase();
-
+            Console.ResetColor();
         }
 
     }
