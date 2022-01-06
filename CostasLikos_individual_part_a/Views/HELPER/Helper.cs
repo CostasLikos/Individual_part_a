@@ -151,7 +151,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.WriteLine();
                         ViewStudents.PrintStudent(students);
                         int stuid = InputNumber("Please choose and input Student's ID");
-                        if (stuid > (students.Count ) || stuid == 0)
+                        if (stuid > (students.Count) || stuid == 0)
                         {
                             do
                             {
@@ -176,11 +176,11 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.WriteLine();
                         ViewAssignments.PrintAssignment(assignments);
                         int assid = InputNumber("Please choose and input Assignment's ID");
-                        if (assid>(assignments.Count) || assid == 0)
+                        if (assid > (assignments.Count) || assid == 0)
                         {
                             do
                             {
-                               assid = InputNumber("Please choose and input Assignment's ID only from the following");
+                                assid = InputNumber("Please choose and input Assignment's ID only from the following");
                             } while (assid > (assignments.Count) || assid == 0);
                         }
                         ViewCourse.PrintCourse(courses);
@@ -263,7 +263,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static void FilteringMenu(List<Student> students, List<Trainer> trainers, List<Course> courses, List<Assignment> assignments)
         {
-            
+
 
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -292,7 +292,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Thread.Sleep(50);
             Console.ResetColor();
 
-            string input; 
+            string input;
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             do
             {
@@ -304,7 +304,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "2": new StudentRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
                     case "3": new AssignmentRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
                     case "4": new TrainerRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
-                    case "5": 
+                    case "5":
                         new CourseRepository().GetByName(InputText("Please Input the Name You want to filter")); break;
                     case "6":
                         new StudentRepository().GetByName(InputText("Please Input the Name You want to filter"));
@@ -474,13 +474,15 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
             bool x = IsProperDate(result); ;
-
-            do
+            if (!x)
             {
-                Console.WriteLine("WRONG INPUT PLESE TRY ARAIN WITH VALID DATE FORMATING ex : YYYY-MM-DD");
-                result = Console.ReadLine();
-                x = IsProperDate(result);
-            } while (!x);
+                do
+                {
+                    Console.WriteLine("WRONG INPUT PLESE TRY ARAIN WITH VALID DATE FORMATING ex : YYYY-MM-DD");
+                    result = Console.ReadLine();
+                    x = IsProperDate(result);
+                } while (!x);
+            }
 
             DateTime date = Convert.ToDateTime(result);
 
@@ -547,16 +549,17 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
         public static void DateForStudentsWithAssignmentToGive(DateTime date, List<Student> students)
         {
-            List <DateTime> week = GetWeek(date);
+            List<DateTime> week = GetWeek(date);
             foreach (var stu in students)
             {
                 foreach (var ass in stu.assignments)
                 {
                     if (ass.subDateTime >= week[0] && ass.subDateTime <= week[1])
                     {
-                        Console.BackgroundColor = ConsoleColor.Magenta;
+                        Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
                         Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { ass.title} - { ass.subDateTime.ToShortDateString()}");
+                        Console.WriteLine();
                         Console.ResetColor();
                     }
                 }
@@ -569,7 +572,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine($"The day you choose is: {dayOfTheWeek}");
             var startDate = date;
             var endDate = date;
-            
+
 
 
             if (dayOfTheWeek == DayOfWeek.Monday)
@@ -606,7 +609,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                 endDate = endDate.AddDays(-2);
             }
 
-            List<DateTime> days = new List<DateTime>() {startDate, endDate};
+            List<DateTime> days = new List<DateTime>() { startDate, endDate };
             return days;
         }
 
