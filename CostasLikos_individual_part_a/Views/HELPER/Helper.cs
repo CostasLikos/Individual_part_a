@@ -145,7 +145,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "13": ViewTrainers.CreateTrainer(trainers); break;
                     case "14": StudentsWithMoreThanOneCourse("These are the students with more than one course :", students); break;
                     case "15": DateForStudentsWithAssignmentToGive("  Please input the date you want to check for pending assingments.\n       format: YYYY-MM-DD", students); break;
-                    case "16":; break;
+                    case "16": FilteringMenu(students, trainers, courses, assignments); break;
                     case "17":
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine();
@@ -256,6 +256,70 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
                 }
 
+
+            } while (input != "0");
+            Console.ResetColor();
+        }
+
+        public static void FilteringMenu(List<Student> students, List<Trainer> trainers, List<Course> courses, List<Assignment> assignments)
+        {
+            
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine($"    CHOOSE ONE OF THE FOLLOWING AND USE THE NUMBERS BELOW INDICATING YOUR OPTIONS ");
+            Console.WriteLine();
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 0 TO EXIT FILTER MENU"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 1 TO FILTER COURSES BY ID"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 2 TO FILTER STUDENTS BY ID"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 3 TO FILTER ASSIGNMENTS BY ID"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 4 TO FILTER TRAINERS BY ID"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 5 TO FILTER COURSES BY NAME"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 6 TO FILTER STUDENTS BY NAME"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 7 TO FILTER ASSIGNMENTS BY NAME"}");
+            Thread.Sleep(50);
+            Console.WriteLine($"{"  PRESS 8 TO FILTER TRAINERS BY NAME"}");
+            Thread.Sleep(50);
+            Console.ResetColor();
+
+            string input; 
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            do
+            {
+                input = Console.ReadLine();
+                switch (input)
+                {
+                    case "0": ViewAllOptionsMenu(students, trainers, courses, assignments); break;
+                    case "1": new CourseRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
+                    case "2": new StudentRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
+                    case "3": new AssignmentRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
+                    case "4": new TrainerRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
+                    case "5": 
+                        new CourseRepository().GetByName(InputText("Please Input the Name You want to filter")); break;
+                    case "6":
+                        new StudentRepository().GetByName(InputText("Please Input the Name You want to filter"));
+                        new StudentRepository().GetByLastName(InputText("Please Input the Last Name You want to filter")); break;
+                    case "7":
+                        new AssignmentRepository().GetByName(InputText("Please Input the Name You want to filter")); break;
+                    case "8":
+                        new TrainerRepository().GetByName(InputText("Please Input the Name You want to filter"));
+                        new TrainerRepository().GetByLastName(InputText("Please Input the Last Name You want to filter")); break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine();
+                        Console.WriteLine("  WRONG INPUT, PLEASE SELECT A GIVEN NUMBER FROM ABOVE.");
+                        break;
+                }
 
             } while (input != "0");
             Console.ResetColor();

@@ -19,6 +19,9 @@ namespace CostasLikos_individual_part_a.RepositoryService
             {
                 throw new ArgumentNullException(nameof(trainer));
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with ID: {id} is:\n\n   {trainer.Id}  -  {trainer.firstName} {trainer.lastName}");
+            Console.ResetColor();
             return trainer;
         }
 
@@ -27,8 +30,13 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var trainer = App.db.trainers.Find(x => x.firstName == name);
             if (trainer is null)
             {
-                throw new ArgumentNullException(nameof(trainer));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{name}");
+                Console.ResetColor();
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with name: {name} is:\n\n   {trainer.Id}  -  {trainer.firstName} {trainer.lastName}");
+            Console.ResetColor();
             return trainer;
         }
         public Trainer GetByLastName(string name)
@@ -36,8 +44,13 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var trainer = App.db.trainers.Find(x => x.lastName == name);
             if (trainer is null)
             {
-                throw new ArgumentNullException(nameof(trainer));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{name}");
+                Console.ResetColor();
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with name: {name} is:\n\n   {trainer.Id}  -  {trainer.firstName} {trainer.lastName}");
+            Console.ResetColor();
             return trainer;
         }
 

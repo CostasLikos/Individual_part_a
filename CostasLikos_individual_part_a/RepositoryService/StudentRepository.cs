@@ -27,8 +27,13 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var student = App.db.students.Find(x => x.Id == id);
             if (student is null)
             {
-                throw new ArgumentNullException(nameof(student));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{id}");
+                Console.ResetColor();
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with ID: {id} is:\n\n   {student.Id}  -  {student.firstName} {student.lastName}");
+            Console.ResetColor();
             return student;
         }
 
@@ -37,8 +42,13 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var student = App.db.students.Find(x => x.firstName == name);
             if (student is null)
             {
-                throw new ArgumentNullException(nameof(student));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{name}");
+                Console.ResetColor();
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with name: {name} is:\n\n   {student.Id}  -  {student.firstName} {student.lastName}");
+            Console.ResetColor();
             return student;
         }
         public Student GetByLastName(string name)
@@ -46,8 +56,14 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var student = App.db.students.Find(x => x.lastName == name);
             if (student is null)
             {
-                throw new ArgumentNullException(nameof(student));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{name}");
+                Console.ResetColor();
             }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with name: {name} is:\n\n   {student.Id}  -  {student.firstName} {student.lastName}");
+            Console.ResetColor();
             return student;
 
 

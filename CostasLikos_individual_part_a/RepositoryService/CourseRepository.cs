@@ -1,6 +1,7 @@
 ﻿using Costas_Part_A;
 using CostasLikos_individual_part_a.Application;
 using CostasLikos_individual_part_a.DataBase;
+using CostasLikos_individual_part_a.Views.Courses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,9 +47,15 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var course = App.db.courses.Find(x => x.Id == id);
             if (course is null)
             {
-                throw new ArgumentNullException(nameof(course));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{id}");
+                Console.ResetColor();
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with id: {id} is:\n\n   {course.Id}  -  {course.title}");
+            Console.ResetColor();
             return course;
+            
         }
 
         public Course GetByName(string name)
@@ -57,8 +64,14 @@ namespace CostasLikos_individual_part_a.RepositoryService
             var course = App.db.courses.FirstOrDefault(x => x.title == name);
             if (course is null)
             {
-                throw new ArgumentNullException(nameof(course));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"There is no item with these creteria :{name}");
+                Console.ResetColor();
+
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"The Item you filtered with name: {name} is:\n\n   {course.Id}  -  {course.title}");
+            Console.ResetColor();
             return course;
         }
 
