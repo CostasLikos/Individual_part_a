@@ -151,9 +151,23 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.WriteLine();
                         ViewStudents.PrintStudent(students);
                         int stuid = InputNumber("Please choose and input Student's ID");
+                        if (stuid > (students.Count ) || stuid == 0)
+                        {
+                            do
+                            {
+                                stuid = InputNumber("Please choose and input Student's ID only from the following");
+                            } while (stuid > (students.Count) || stuid == 0);
+                        }
                         ViewCourse.PrintCourse(courses);
                         Console.WriteLine();
                         int couidstu = InputNumber("Please choose and input Course's ID");
+                        if (couidstu > (courses.Count) || couidstu == 0)
+                        {
+                            do
+                            {
+                                couidstu = InputNumber("Please choose and input Courses's ID only from the following");
+                            } while (couidstu > (courses.Count) || couidstu == 0);
+                        }
                         new CourseRepository().AttachStudentToCourse(stuid, couidstu);
                         ViewCourse.PrintStudentsPerCourse(courses);
                         break;
@@ -162,9 +176,23 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.WriteLine();
                         ViewAssignments.PrintAssignment(assignments);
                         int assid = InputNumber("Please choose and input Assignment's ID");
+                        if (assid>(assignments.Count) || assid == 0)
+                        {
+                            do
+                            {
+                               assid = InputNumber("Please choose and input Assignment's ID only from the following");
+                            } while (assid > (assignments.Count) || assid == 0);
+                        }
                         ViewCourse.PrintCourse(courses);
                         Console.WriteLine();
                         int couidass = InputNumber("Please choose and input Course's ID");
+                        if (couidass > (courses.Count) || couidass == 0)
+                        {
+                            do
+                            {
+                                couidass = InputNumber("Please choose and input Course's ID only from the following");
+                            } while (couidass > (courses.Count) || couidass == 0);
+                        }
                         new CourseRepository().AttachAssignmentToCourse(assid, couidass);
                         ViewCourse.PrintAssignmentPerCourse(courses);
                         break;
@@ -173,9 +201,23 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.WriteLine();
                         ViewTrainers.PrintTrainers(trainers);
                         int traid = InputNumber("Please choose and input Trainer's ID");
+                        if (traid > (trainers.Count) || traid == 0)
+                        {
+                            do
+                            {
+                                traid = InputNumber("Please choose and input Trainer's ID only from the following");
+                            } while (traid > (trainers.Count) || traid == 0);
+                        }
                         ViewCourse.PrintCourse(courses);
                         Console.WriteLine();
                         int couidtra = InputNumber("Please choose and input Course's ID");
+                        if (couidtra > (courses.Count) || couidtra == 0)
+                        {
+                            do
+                            {
+                                couidtra = InputNumber("Please choose and input Course's ID only from the following");
+                            } while (couidtra > (courses.Count) || couidtra == 0);
+                        }
                         new CourseRepository().AttachTrainerToCourse(traid, couidtra);
                         ViewCourse.PrintTrainersPerCourse(courses);
                         break;
@@ -184,9 +226,23 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                         Console.WriteLine();
                         ViewAssignments.PrintAssignment(assignments);
                         int assid2 = InputNumber("Please choose and input Assignment's ID");
+                        if (assid2 > (assignments.Count) || assid2 == 0)
+                        {
+                            do
+                            {
+                                assid2 = InputNumber("Please choose and input Assignment's ID only from the following");
+                            } while (assid2 > (assignments.Count) || assid2 == 0);
+                        }
                         ViewStudents.PrintStudent(students);
                         Console.WriteLine();
                         int stuidass = InputNumber("Please choose and input Student's ID");
+                        if (stuidass > (students.Count) || stuidass == 0)
+                        {
+                            do
+                            {
+                                stuidass = InputNumber("Please choose and input Student's ID only from the following");
+                            } while (stuidass > (students.Count) || stuidass == 0);
+                        }
                         new StudentRepository().AttachAssignmentToStudent(assid2, stuidass);
                         ViewStudents.PrintAssignmentPerStudent(students);
                         break;
@@ -254,11 +310,14 @@ namespace CostasLikos_individual_part_a.Views.HELPER
 
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
-            do
+            if (string.IsNullOrEmpty(result))
             {
-                Console.WriteLine($" There as an error with your input: {nameof(result)}\n your input can not be empty or null: {nameof(result)}\n Please try again. ");
-                result = Console.ReadLine();
-            } while (string.IsNullOrEmpty(result));
+                do
+                {
+                    Console.WriteLine($" There as an error with your input: {result}\n your input can not be empty or null.\n Please try again. ");
+                    result = Console.ReadLine();
+                } while (string.IsNullOrEmpty(result));
+            }
             return result;
         }
 
@@ -268,17 +327,20 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.WriteLine(placeholder);
             string result = Console.ReadLine();
             bool success = int.TryParse(result, out number);
-            do
+            if (!success)
             {
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine($"Attempted conversion of '{result ?? "<null>"}' failed.");
-                Console.WriteLine();
-                Console.WriteLine($"Please Try again");
-                result = Console.ReadLine();
-                success = int.TryParse(result, out number);
+                do
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine($"Attempted conversion of '{result ?? "<null>"}' failed.");
+                    Console.WriteLine();
+                    Console.WriteLine($"Please Try again");
+                    result = Console.ReadLine();
+                    success = int.TryParse(result, out number);
 
-            } while (!success);
+                } while (!success);
+            }
 
             Console.WriteLine($"Converted '{result}' to {number}.");
             return number;
@@ -288,15 +350,27 @@ namespace CostasLikos_individual_part_a.Views.HELPER
         public static double InputDouble(string placeholder)
         {
 
+            double number;
             Console.WriteLine(placeholder);
-            double result = Convert.ToDouble(Console.ReadLine());
-            do
+            string result = Console.ReadLine();
+            bool success = double.TryParse(result, out number);
+            if (!success)
             {
-                Console.WriteLine($" There was an error converting :{nameof(result)}.\n\n Please try again.");
-                result = Convert.ToDouble(Console.ReadLine());
+                do
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine($"Attempted conversion of '{result ?? "<null>"}' failed.");
+                    Console.WriteLine();
+                    Console.WriteLine($"Please Try again");
+                    result = Console.ReadLine();
+                    success = double.TryParse(result, out number);
 
-            } while (double.IsNaN(result) || double.IsInfinity(result));
-            return result;
+                } while (!success);
+            }
+
+            Console.WriteLine($"Converted '{result}' to {number}.");
+            return number;
         }
 
         public static TypeEnum InputEnumOption(string placeholder)
@@ -345,6 +419,40 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             } while (!x);
 
             DateTime date = Convert.ToDateTime(result);
+
+            return date;
+            //DEN BAZW VALIDATION GIA TO PARELTHON GT MPOREI NA THELW NA KANW ADD KATI POU EXEI PERASEI O KAIROS TOU
+
+        }
+
+        public static DateTime InputBirthDate(string placeholder)
+        {
+            Console.WriteLine(placeholder);
+            string result = Console.ReadLine();
+            bool x = IsProperDate(result); ;
+            if (!x)
+            {
+                do
+                {
+                    Console.WriteLine("WRONG INPUT PLESE TRY AGAIN WITH VALID DATE OF BIRTH FORMATING ex : YYYY-MM-DD");
+                    result = Console.ReadLine();
+                    x = IsProperDate(result);
+                } while (!x);
+            }
+
+            DateTime date = Convert.ToDateTime(result);
+            DateTime now = DateTime.Now;
+
+            if (date > now)
+            {
+                do
+                {
+                    Console.WriteLine("WRONG INPUT PLESE TRY AGAIN WITH A DATE BEFORE TODAY, THANK YOU");
+                    result = Console.ReadLine();
+                    x = IsProperDate(result);
+                    date = Convert.ToDateTime(result);
+                } while (date > now || !x);
+            }
 
             return date;
             //DEN BAZW VALIDATION GIA TO PARELTHON GT MPOREI NA THELW NA KANW ADD KATI POU EXEI PERASEI O KAIROS TOU

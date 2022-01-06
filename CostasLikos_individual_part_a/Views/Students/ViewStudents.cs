@@ -35,7 +35,7 @@ namespace CostasLikos_individual_part_a.Views.Students
             
             string lastname = Helper.InputText("PLEASE INPUT STUDENT'S SURNAME");
             
-            DateTime bdate = Helper.InputStartDate("PLEASE INPUT STUDENT'S DATE OF BIRTH");
+            DateTime bdate = Helper.InputBirthDate("PLEASE INPUT STUDENT'S DATE OF BIRTH");
 
             double fees = Helper.InputDouble("PLEASE INPUT STUDENT'S FEES");
 
