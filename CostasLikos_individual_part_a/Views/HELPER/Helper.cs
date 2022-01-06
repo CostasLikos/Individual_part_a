@@ -453,10 +453,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     date = Convert.ToDateTime(result);
                 } while (date > now || !x);
             }
-
             return date;
-            //DEN BAZW VALIDATION GIA TO PARELTHON GT MPOREI NA THELW NA KANW ADD KATI POU EXEI PERASEI O KAIROS TOU
-
         }
 
         public static DateTime InputEndDate(DateTime start, TypeEnum choice)
