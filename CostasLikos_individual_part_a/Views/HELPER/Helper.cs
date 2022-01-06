@@ -144,7 +144,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "12": ViewAssignments.CreateAssignment(assignments); break;
                     case "13": ViewTrainers.CreateTrainer(trainers); break;
                     case "14": StudentsWithMoreThanOneCourse("These are the students with more than one course :", students); break;
-                    case "15": DateForStudentsWithAssignmentToGive("  Please input the date you want to check for pending assingments.\n       format: YYYY-MM-DD", students); break;
+                    case "15": DateForStudentsWithAssignmentToGive(Helper.InputStartDate("  Please input the date you want to check for pending assingments.\n       format: YYYY-MM-DD"), students); break;
                     case "16": FilteringMenu(students, trainers, courses, assignments); break;
                     case "17":
                         Console.ForegroundColor = ConsoleColor.Blue;
@@ -545,79 +545,69 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.Read();
         }
 
-        public static void DateForStudentsWithAssignmentToGive(string placeholder, List<Student> students)
+        public static void DateForStudentsWithAssignmentToGive(DateTime date, List<Student> students)
         {
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(placeholder);
-            Console.ResetColor();
-            DateTime date = Convert.ToDateTime(Console.ReadLine());
-
-
-
-
-            CultureInfo enUS = new CultureInfo("en-US");
-            date.ToString("d", enUS);
-            DateTime weekstart = new DateTime();
-
-            if (date.ToString("ddd", enUS) == "Sat")
-            {
-                date.AddDays(-1);
-                weekstart = date;
-                weekstart.AddDays(-4);
-            }
-            else if (date.ToString("ddd", enUS) == "Sun")
-            {
-                date.AddDays(-2);
-                weekstart = date;
-                weekstart.AddDays(-4);
-            }
-            else
-            {
-                if (date.ToString("ddd", enUS) == "Mon")
-                {
-                    weekstart = date;
-                    date.AddDays(+4);
-                }
-                else if (date.ToString("ddd", enUS) == "Tue")
-                {
-                    weekstart = date;
-                    weekstart.AddDays(-1);
-                    date.AddDays(+3);
-
-                }
-                else if (date.ToString("ddd", enUS) == "Wed")
-                {
-                    weekstart = date;
-                    weekstart.AddDays(-2);
-                    date.AddDays(+2);
-                }
-                else if (date.ToString("ddd", enUS) == "The")
-                {
-                    weekstart = date;
-                    weekstart.AddDays(-3);
-                    date.AddDays(+1);
-                }
-                else if (date.ToString("ddd", enUS) == "Fri")
-                {
-                    weekstart = date;
-                    weekstart.AddDays(-4);
-                }
-            }
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            List <DateTime> week = GetWeek(date);
             foreach (var stu in students)
             {
-                foreach (Assignment ass in stu.assignments)
+                foreach (var ass in stu.assignments)
                 {
-                    if (ass.subDateTime > weekstart && ass.subDateTime < date)
+                    if (ass.subDateTime >= week[0] && ass.subDateTime <= week[1])
                     {
+                        Console.BackgroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
                         Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} - { ass.title} - { ass.subDateTime.ToShortDateString()}");
+                        Console.ResetColor();
                     }
                 }
 
             }
-            Console.ResetColor();
+        }
+        public static List<DateTime> GetWeek(DateTime date)
+        {
+            var dayOfTheWeek = date.DayOfWeek; // enum list
+            Console.WriteLine($"The day you choose is: {dayOfTheWeek}");
+            var startDate = date;
+            var endDate = date;
+            
+
+
+            if (dayOfTheWeek == DayOfWeek.Monday)
+            {
+                endDate = endDate.AddDays(4);
+            }
+            else if (dayOfTheWeek == DayOfWeek.Tuesday)
+            {
+                startDate = startDate.AddDays(-1);
+                endDate = endDate.AddDays(3);
+            }
+            else if (dayOfTheWeek == DayOfWeek.Wednesday)
+            {
+                startDate = startDate.AddDays(-2);
+                endDate = endDate.AddDays(2);
+            }
+            else if (dayOfTheWeek == DayOfWeek.Thursday)
+            {
+                startDate = startDate.AddDays(-3);
+                endDate = endDate.AddDays(1);
+            }
+            else if (dayOfTheWeek == DayOfWeek.Friday)
+            {
+                startDate = startDate.AddDays(-4);
+            }
+            else if (dayOfTheWeek == DayOfWeek.Saturday)
+            {
+                startDate = startDate.AddDays(-5);
+                endDate = endDate.AddDays(-1);
+            }
+            else
+            {
+                startDate = startDate.AddDays(-6);
+                endDate = endDate.AddDays(-2);
+            }
+
+            List<DateTime> days = new List<DateTime>() {startDate, endDate};
+            return days;
         }
 
         public static void StudentsWithMoreThanOneCourse(string placeholder, List<Student> students)

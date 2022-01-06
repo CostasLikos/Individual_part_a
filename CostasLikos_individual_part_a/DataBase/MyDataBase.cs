@@ -65,7 +65,6 @@ namespace CostasLikos_individual_part_a.DataBase
             Course c12 = new Course(12, "C++ - FINISHED", "CB04", TypeEnum.PartTime, new DateTime(2017, 1, 20), new DateTime(2017, 7, 20));
             #endregion
 
-
             #region Seeding Assignments
             //Assingment----------------------
             Assignment a1 = new Assignment(1,"Calculator", "Make a functional calculator", new DateTime(2022, 12, 30), 20, 80);

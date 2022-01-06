@@ -13,11 +13,11 @@ namespace Costas_Part_A
 {
     class Program
     {
-       
-       
+
+
         static void Main(string[] args)
         {
-          App.Run();
+            App.Run();
         }
     }
 }
