@@ -282,14 +282,7 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Thread.Sleep(50);
             Console.WriteLine($"{"  PRESS 4 TO FILTER TRAINERS BY ID"}");
             Thread.Sleep(50);
-            Console.WriteLine($"{"  PRESS 5 TO FILTER COURSES BY NAME"}");
-            Thread.Sleep(50);
-            Console.WriteLine($"{"  PRESS 6 TO FILTER STUDENTS BY NAME"}");
-            Thread.Sleep(50);
-            Console.WriteLine($"{"  PRESS 7 TO FILTER ASSIGNMENTS BY NAME"}");
-            Thread.Sleep(50);
-            Console.WriteLine($"{"  PRESS 8 TO FILTER TRAINERS BY NAME"}");
-            Thread.Sleep(50);
+
             Console.ResetColor();
 
             string input;
@@ -304,16 +297,6 @@ namespace CostasLikos_individual_part_a.Views.HELPER
                     case "2": new StudentRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
                     case "3": new AssignmentRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
                     case "4": new TrainerRepository().GetByID(InputNumber("Please Input the ID You want to filter")); break;
-                    case "5":
-                        new CourseRepository().GetByName(InputText("Please Input the Name You want to filter")); break;
-                    case "6":
-                        new StudentRepository().GetByName(InputText("Please Input the Name You want to filter"));
-                        new StudentRepository().GetByLastName(InputText("Please Input the Last Name You want to filter")); break;
-                    case "7":
-                        new AssignmentRepository().GetByName(InputText("Please Input the Name You want to filter")); break;
-                    case "8":
-                        new TrainerRepository().GetByName(InputText("Please Input the Name You want to filter"));
-                        new TrainerRepository().GetByLastName(InputText("Please Input the Last Name You want to filter")); break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
@@ -623,13 +606,14 @@ namespace CostasLikos_individual_part_a.Views.HELPER
             Console.ForegroundColor = ConsoleColor.Cyan;
             foreach (var stu in students)
             {
-                foreach (Course cour in stu.courses)
+
+                if (stu.courses.Count > 1)
                 {
-                    if (stu.courses.Count > 1)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName} \n Courses number: { stu.courses.Count}");
-                    }
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine();
+                    Console.WriteLine($"  Student:  {stu.firstName} { stu.lastName}");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine($"  Courses number: { stu.courses.Count} ");
                 }
 
             }
